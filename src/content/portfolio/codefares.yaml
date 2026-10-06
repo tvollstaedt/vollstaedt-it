@@ -1,0 +1,56 @@
+slug: codefares
+title: "CodeFares – Developer-as-a-Service"
+subtitle: "Experimentelles Abo-Modell für Softwareentwicklung als Productized Service"
+type: own
+categories: ["Startup", "Automation", "NoCode"]
+services: ["Konzeption", "Entwicklung", "Tooling", "Business-Modelling"]
+technologies:
+  - name: Webflow
+    url: https://webflow.com
+  - name: NestJS
+    url: https://nestjs.com
+  - name: Stripe
+    url: https://stripe.com
+  - name: Make.com (Integromat)
+    url: https://www.make.com
+  - name: Brevo (ex-Sendinblue)
+    url: https://www.brevo.com
+  - name: Trello
+    url: https://trello.com
+coverImage: "images/portfolio/codefares/2.webp"
+gallery:
+  - "images/portfolio/codefares/1.webp"
+  - "images/portfolio/codefares/2.webp"
+  - "images/portfolio/codefares/3.webp"
+  - "images/portfolio/codefares/4.webp"
+externalUrl: "https://codefares.webflow.io"
+sourceCodeUrl: ""
+date: "2023-01-01"
+
+description: |
+  ### Idee
+
+  CodeFares war ein Experiment, das Prinzip der „Productized Services“ – vor allem aus dem Designbereich – auf den Bereich der Softwareentwicklung zu übertragen. Ziel war es, **Softwareentwicklung als monatlich buchbaren Service** anzubieten. Kunden sollten über eine Landingpage ein Abo abschließen und fortlaufend Aufgaben einstellen können. Dabei war pro Kunde jeweils **nur ein aktives Ticket** erlaubt – um den Service skalierbar zu halten.
+
+  Die Idee: viele Kunden mit geringem Ticket-Volumen ermöglichen es, effizient zwischen Aufgaben zu wechseln – ohne klassisches Projektgeschäft und ohne Angebotsprozess. Ein Modell, das sich im Designbereich etabliert hat, aber in der Softwareentwicklung noch wenig ausprobiert wurde.
+
+  [[gallery]]
+
+  ### Meine Rolle
+  Als alleiniger Gründer habe ich das Projekt vollständig konzipiert, technisch umgesetzt und betrieben. Ich war verantwortlich für Architektur, UX, Entwicklung, CI/CD und das Hosting. Zudem habe ich das Geschäftsmodell sowie die Inhalte selbst entwickelt.
+
+  ### Umsetzung
+
+  Die Landingpage wurde mit __Webflow__ erstellt und diente sowohl der Produktkommunikation als auch der direkten Conversion. Nach Abschluss eines __Stripe-Abonnements__ wurde ein automatisierter Workflow angestoßen:
+
+  - Ein __NestJS-basierter Webhook-API-Service__ empfing Events von Stripe/Webflow
+  - Die __Automatisierungslogik__ lief über __Make.com__ (ehemals Integromat)
+  - Kunden erhielten automatisierte E-Mails via __Brevo__, inkl. Zugang zu einem __individuellen Trello-Board__, das automatisch erstellt und konfiguriert wurde
+
+  Die Plattform war __mehrsprachig__ und ergänzte Webflow um fehlende Funktionen wie Internationalisierung, personalisierte Inhalte und API-Verarbeitung.
+
+  ### Erkenntnisse
+
+  Trotz hohem Automatisierungsgrad und durchdachter Prozesse blieb die Nachfrage aus. Rückblickend ist das Konzept schwer auf **Softwareentwicklung übertragbar**, da viele Anforderungen komplex und schwer in „ein Ticket“ abstrahierbar sind. Trotzdem war CodeFares eine wertvolle Erfahrung – nicht nur technisch, sondern auch als Testlauf für __Produktvalidierung, Automatisierung und Kundengewinnung__.
+
+  Das Projekt war auch ein direkter Auslöser für die Idee zu __[Fliz](/portfolio/fliz)__, das die technische Plattform abstrahieren und für andere Creator zugänglich machen sollte.

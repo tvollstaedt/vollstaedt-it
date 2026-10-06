@@ -1,0 +1,54 @@
+slug: mf-portal
+title: "Microfrontend-Architektur & Portalentwicklung"
+subtitle: "Self-Contained-Frontend-Plattform für ein Kundenportal im Energiebereich"
+client: Ista SE
+type: client
+categories: ["Microfrontend", "Portal", "Architektur", "Angular"]
+services: ["Plattformentwicklung", "Architekturdesign", "Frontend-Integration"]
+technologies:
+  - name: Angular
+    url: https://angular.io
+  - name: Webpack Module Federation
+    url: https://webpack.js.org/concepts/module-federation/
+  - name: Keycloak
+    url: https://www.keycloak.org
+  - name: i18next
+    url: https://www.i18next.com
+  - name: SCS-Architektur
+    url: https://microservices.io/patterns/decomposition/self-contained-service.html
+coverImage: "images/portfolio/other/3.webp"
+date: "2021-03-01"
+highlight: true
+
+description: |
+  ### Ziel
+
+  Im Rahmen eines langfristigen Projekts für die __ista SE__, einem der führenden Anbieter für digitale Energiedienstleistungen im Gebäudebereich, war ich maßgeblich an der Planung, dem Design und der Umsetzung einer skalierbaren Microfrontend-Architektur für das Kundenportal beteiligt.
+
+  Ziel war es, die stetig wachsende Anzahl an Anwendungen, Teams und Funktionalitäten modular, unabhängig und wartbar zu organisieren – mit einem starken Fokus auf Developer Experience, Integrationsfähigkeit und Zukunftssicherheit.
+
+  ### Meine Rolle
+  Ich war für die Frontend-Architektur verantwortlich und habe die Integration verschiedener Microfrontends in eine konsistente Plattform umgesetzt. Dabei habe ich zentrale Frameworks wie Auth, Navigation und Designsystem komponentenbasiert realisiert und eng mit Backend und UX abgestimmt.
+
+  ### Architektur & Umsetzung
+
+  Die Plattform basiert auf dem Prinzip der __Self-Contained Systems (SCS)__ und verwendet __Webpack Module Federation__ für die dynamische Einbindung einzelner Angular-Frontends.
+
+  - Jedes Feature ist ein eigenständiges Angular-Projekt mit eigenem Repository, CI/CD-Workflow und Ownership.
+  - Die zentrale __Shell__ stellt Navigation, Sprachwahl, Support-Komponenten und ein konsistentes Designframework bereit.
+  - Über eine gemeinsame __Shell-Library__ kommunizieren die Microfrontends mit der Shell, z.B. zur Navigation, UI-Kontrolle oder Telemetrie.
+  - Weitere dedizierte Libraries unterstützen häufige Querschnittsthemen wie:
+    - `auth-lib` für Keycloak-Integration
+    - `datalayer-lib` für Tracking und Logging
+    - `i18n-lib` für Internationalisierung & Spracheinstellungen
+  - Alle Bibliotheken sind klar versioniert und Teil einer übergreifenden Plattformstrategie.
+
+  Ich war bei allen Aspekten – von der Konzeption über die Architektur bis zur produktiven Entwicklung – tief eingebunden und habe insbesondere bei der Shell-Architektur, den Plattformkonzepten und der Federated Build-Struktur Verantwortung übernommen.
+
+  ### Wirkung & Learnings
+
+  Die Plattform ermöglichte es, neue Funktionalitäten unabhängig und schnell zu entwickeln, ohne zentrale Bottlenecks. Entwicklerteams konnten selbstständig arbeiten, neue Projekte anschließen und Features in enger Abstimmung mit Fachbereichen umsetzen.
+
+  **Learnings:**
+  - Skalierbare Frontend-Plattformen erfordern nicht nur Technologie, sondern auch klare Konventionen, Plattform-Ownership und abgestimmte Entwicklungskultur.
+  - Eine durchdachte Shell-Library mit klarer API ist entscheidend für Stabilität, Sicherheit und Konsistenz.

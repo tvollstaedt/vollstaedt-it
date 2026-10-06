@@ -1,0 +1,93 @@
+<div
+  class="container md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1320px] mx-auto px-7"
+>
+  <app-header />
+
+  <div class="py-16 xl:py-[70px]">
+    <h1
+      class="font-outfit font-medium text-charcoal text-6xl xl:text-7xl leading-[1.2] dark:text-white"
+    >
+      Get In Touch
+    </h1>
+    <div class="lg:flex space-y-10 lg:space-y-0 mt-8">
+      <!-- Contact Info -->
+      <div
+        class="lg:w-2/5 lg:order-2 lg:ml-12 bg-steelBlue lg:h-fit p-8 md:p-10 xl:p-12 rounded-3xl shadow-customShadow hover:shadow-customShadowHover transition ease-out duration-150 dark:bg-steelBlueDarker"
+      >
+        <h5 class="font-outfit font-medium text-xl text-white">Phone:</h5>
+        <p class="text-white/80">+123 456 78901</p>
+        <p class="text-white/80">+123 456 78902</p>
+        <div class="mt-5">
+          <h5 class="font-outfit font-medium text-xl text-white">Email:</h5>
+          <p class="text-white/80">contact&#64;domain.com</p>
+        </div>
+        <div class="mt-5">
+          <h5 class="font-outfit font-medium text-xl text-white">Address:</h5>
+          <p class="text-white/80">Address: 121 King St, Melbourne VIC 3000</p>
+        </div>
+      </div>
+      <!-- Contact Form -->
+      <div class="lg:w-3/5 lg:order-1">
+        <form class="space-y-4" method="post" id="contactform">
+          <div class="flex w-full space-x-4">
+            <div class="w-1/2">
+              <input
+                class="bg-white/30 w-full border border-charcoal/30 border-dashed rounded-3xl px-6 py-3 text-black/60 placeholder:text-black/50 transition ease-out duration-[120ms] focus:outline-none focus:border-charcoal dark:bg-charcoal/30 dark:border-white/30 dark:text-white/80 dark:placeholder:text-white/50 dark:focus:border-white"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                required
+              />
+            </div>
+            <div class="w-1/2">
+              <input
+                class="bg-white/30 w-full border border-charcoal/30 border-dashed rounded-3xl px-6 py-3 text-black/60 placeholder:text-black/50 transition ease-out duration-[120ms] focus:outline-none focus:border-charcoal dark:bg-charcoal/30 dark:border-white/30 dark:text-white/80 dark:placeholder:text-white/50 dark:focus:border-white"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="E-Mail"
+                required
+              />
+            </div>
+          </div>
+          <input
+            class="w-full bg-white/30 border border-charcoal/30 border-dashed rounded-3xl px-6 py-3 text-black/60 placeholder:text-black/50 transition ease-out duration-[120ms] focus:outline-none focus:border-charcoal dark:bg-charcoal/30 dark:border-white/30 dark:text-white/80 dark:placeholder:text-white/50 dark:focus:border-white"
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Subject"
+            required
+          />
+          <textarea
+            class="bg-white/30 w-full h-44 border border-charcoal/30 border-dashed rounded-3xl px-6 py-3 text-black/60 placeholder:text-black/50 transition ease-out duration-[120ms] focus:outline-none focus:border-charcoal dark:bg-charcoal/30 dark:border-white/30 dark:text-white/80 dark:placeholder:text-white/50 dark:focus:border-white"
+            name="message"
+            id="message"
+            placeholder="Message"
+          ></textarea>
+          <button
+            class="inline-block bg-charcoal text-white px-8 py-4 rounded-full font-outfit font-normal transition linear duration-100 hover:bg-charcoal/90 dark:bg-white/10 dark:hover:bg-white/15"
+            type="submit"
+          >
+            Send Message
+          </button>
+        </form>
+        <!-- Submit result -->
+        <div class="submit-result">
+          <span
+            class="hidden transition-all duration-200 ease-out text-green-700"
+            id="success"
+            >Thank you! Your Message has been sent.</span
+          >
+          <span
+            class="hidden transition-all duration-200 ease-out text-red-600"
+            id="error"
+            >Something went wrong, Please try again!</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-footer />
+</div>

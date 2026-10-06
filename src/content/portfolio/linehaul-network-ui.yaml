@@ -1,0 +1,55 @@
+slug: linehaul-network-ui
+title: "UI-Entwicklung & Architekturberatung für ein Transportnetzwerk-Tool"
+subtitle: "Webplattform zur Planung und Verwaltung internationaler Linehaul-Netzwerke"
+client: DB Schenker AG
+type: client
+categories: ["Logistik", "Transport", "Enterprise", "Frontend"]
+services: ["Frontend-Entwicklung", "Architekturberatung", "DevOps-Support"]
+date: "2019-06-01"
+technologies:
+  - name: Angular 7
+    url: https://angular.io
+  - name: RxJS
+    url: https://rxjs.dev
+  - name: NgRx
+    url: https://ngrx.io
+  - name: AG Grid
+    url: https://www.ag-grid.com
+  - name: Bootstrap
+    url: https://getbootstrap.com
+  - name: Keycloak
+    url: https://www.keycloak.org
+  - name: Kubernetes
+    url: https://kubernetes.io
+  - name: AWS
+    url: https://aws.amazon.com
+  - name: GitLab CI
+    url: https://about.gitlab.com/stages-devops-lifecycle/continuous-integration
+coverImage: "images/portfolio/other/2.webp"
+description: |
+  ### Ziel
+
+  Ziel des Projekts war der Aufbau eines Systems zur __Planung, Verwaltung und Visualisierung internationaler Transportnetzwerke im Landverkehr__, inklusive Linehaul-Strecken, Depots, Routen und Kapazitätsplanung. Die Plattform sollte als zentrale Webanwendung für interne Nutzer:innen verschiedener europäischer Niederlassungen fungieren.
+
+  ### Rolle & Aufgaben
+
+  Ich war verantwortlich für die Konzeption und Entwicklung eines performanten UI-Frontends – inklusive Grid-basierten Ansichten, Kartenintegration und konfigurierbaren Routing-Komponenten.
+
+  Darüber hinaus habe ich das Team in mehreren infrastrukturellen Themen unterstützt, insbesondere bei der CI/CD-Strategie, Kubernetes-Deployment-Konzepten und Monitoring-Setups.
+
+  ### Umsetzung
+
+  - Frontend: __Angular 7__, __NgRx__, __AG-Grid Enterprise__, __Bootstrap__, __RxJS__
+  - Authentifizierung via __Keycloak SSO__
+  - E2E-Tests mit __Protractor__, Unit-Tests mit __Jasmine__ / __Karma__, Testabdeckung via __SonarQube__
+  - Asset-Management: Nexus, Testrail, Jira
+  - CI/CD mit __GitLab__, Docker & __Kubernetes on AWS__
+  - Monitoring mit __Instana__, __Kibana__, Load-Tests mit __k6__
+
+  ### Wirkung & Learnings
+
+  Das System wurde im Rahmen eines Greenfield-Ansatzes komplett neu aufgebaut und ermöglichte eine deutlich schnellere Anpassung an neue Netzwerkstrukturen im europäischen Transportbereich.
+
+  Der Einsatz moderner Technologien und die parallele Optimierung der Infrastruktur (Kubernetes + AWS) führte zu einer stabilen, skalierbaren Plattform mit hoher Wartbarkeit – auch bei zunehmendem Nutzeraufkommen.
+
+  **Learning:** Die enge Verzahnung von UI-Entwicklung und Infrastruktur ist ein Erfolgsfaktor bei Enterprise-Projekten – sowohl in Bezug auf Performance als auch auf Team-Skalierung.

@@ -1,0 +1,57 @@
+.show {
+  @apply visible opacity-100;
+}
+
+.active {
+  span:before,
+  span:after {
+    @apply bg-charcoal;
+  }
+}
+
+.dark .active {
+  span:before,
+  span:after {
+    @apply bg-white;
+  }
+}
+
+/* Hamburger button */
+.ham {
+  -webkit-tap-highlight-color: transparent;
+  @apply select-none cursor-pointer transition-transform duration-[400ms];
+
+  .top {
+    stroke-dasharray: 40 82;
+  }
+  .middle {
+    stroke-dasharray: 40 111;
+  }
+  .bottom {
+    stroke-dasharray: 40 161;
+  }
+
+  &.active {
+    @apply rotate-45;
+
+    .top {
+      stroke-dasharray: 17 82;
+      stroke-dashoffset: -62px;
+    }
+    .middle {
+      stroke-dashoffset: 23px;
+    }
+    .bottom {
+      stroke-dashoffset: -83px;
+    }
+  }
+
+  .line {
+    transition:
+      stroke-dasharray 400ms,
+      stroke-dashoffset 400ms;
+    @apply stroke-charcoal  fill-none dark:stroke-bodyBg;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+  }
+}

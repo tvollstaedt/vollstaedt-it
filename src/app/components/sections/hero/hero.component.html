@@ -1,0 +1,57 @@
+<!-- Hero section -->
+<div id="about" class="md:flex pt-16 xl:pt-[70px] space-y-6">
+  <div class="md:w-2/6 xl:w-1/4 md:ml-6 lg:ml-8 xl:ml-10 text-right md:order-2">
+    <div
+      class="relative inline-block max-w-[300px] md:max-w-[270px] before:content-[''] before:-z-[1] before:absolute before:-top-2 before:-right-2 before:-bottom-2 before:-left-2 before:bg-white/30 before:border before:border-charcoal/20 before:border-dashed before:rounded-[50%] dark:before:bg-charcoal/30 dark:before:border-white/30"
+    >
+      <img
+        src="/images/avatar.jpg"
+        alt="Avatar"
+        class="object-cover relative z-0 rounded-[50%]"
+        style="clip-path: url(#blobClip)"
+      />
+      <ul class="absolute bottom-5 left-2 space-x-1 flex">
+        @for (socialItem of socialItems; track socialItem) {
+          <li class="list-none inline-block">
+            <a
+              class="inline-flex justify-center items-center w-11 h-11 bg-charcoal/40 rounded-full backdrop-blur-[5px] text-white transition ease-linear duration-75 hover:bg-charcoal/30"
+              [href]="socialItem.target"
+              target="_blank"
+            >
+              <i class="bi {{ socialItem.icon }}"></i>
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+  <div class="md:w-4/6 xl:w-3/4 space-y-5 md:order-1">
+    <p class="font-outfit font-medium text-2xl/none text-customPurple">
+      Hallo, ich bin
+    </p>
+    <p
+      class="font-outfit font-medium text-charcoal text-6xl/none dark:text-white"
+    >
+      Thomas Vollstädt
+    </p>
+    <h1
+      class="font-outfit font-medium text-charcoal text-3xl leading-[1.2] dark:text-white"
+    >
+      Ich baue digitale Produkte von der Architekturentscheidung bis zum Launch.
+    </h1>
+    <p class="text-pColor text-lg dark:text-white/80">
+      Für Unternehmen ohne eigenes Entwicklerteam, vom Gründer bis zum
+      Mittelständler mit gewachsenem Kundenportal. Den Festpreis kennen Sie,
+      bevor die Arbeit beginnt.
+    </p>
+
+    <div
+      class="inline-flex items-center bg-white/30 px-6 py-3 rounded-full border border-charcoal/20 border-dashed text-pColor dark:bg-charcoal/30 dark:border-white/30 dark:text-white/80"
+    >
+      <span
+        class="relative inline-block w-2 h-2 bg-green-400 rounded-full me-3 before:content-[''] before:absolute before:top-0 before:right-0 before:bottom-0 before:left-0 before:bg-green-400 before:rounded-full before:animate-hireDot"
+      ></span>
+      <span>Verfügbar für neue Projekte</span>
+    </div>
+  </div>
+</div>

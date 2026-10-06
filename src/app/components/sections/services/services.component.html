@@ -1,0 +1,73 @@
+<div
+  id="services"
+  class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-[70px] lg:pt-24"
+>
+  <!-- Angular-Migration -->
+  <div
+    class="relative bg-white p-8 pr-14 md:px-10 md:py-12 xl:px-12 xl:py-14 rounded-3xl shadow-customShadow hover:shadow-customShadowHover transition ease-out duration-150 dark:bg-charcoal"
+  >
+    <div
+      class="text-charcoal/40 text-4xl mb-6 md:mb-8 lg:mb-12 dark:text-white/40"
+    >
+      <i class="bi bi-arrow-repeat"></i>
+    </div>
+    <h5 class="font-outfit font-medium text-charcoal text-xl dark:text-white">
+      Angular-Anwendungen zurück auf eine unterstützte Version, zum Festpreis
+    </h5>
+    <p class="mt-3 text-pColor dark:text-white/70">
+      Für einen Konzernkunden habe ich ein Kundenportal über elf Hauptversionen
+      hinweg aktuell gehalten, von Angular 8 bis 19.
+    </p>
+    <p class="mt-3 font-medium text-charcoal dark:text-white">
+      Code-Check 990 €, Migration ab 7.900 € netto.
+    </p>
+    <a
+      class="absolute inline-flex justify-center items-center right-0 bottom-0 bg-charcoal w-[50px] h-[50px] rounded-tl-[50%] rounded-br-[50%] text-white hover:bg-charcoal/90 dark:bg-white/10 dark:hover:bg-white/15"
+      routerLink="/angular"
+      aria-label="Mehr zur Angular-Migration"
+    >
+      <i class="bi bi-arrow-right"></i>
+    </a>
+  </div>
+
+  <!-- Produktentwicklung -->
+  <div
+    class="relative bg-white p-8 pr-14 md:px-10 md:py-12 xl:px-12 xl:py-14 rounded-3xl shadow-customShadow hover:shadow-customShadowHover transition ease-out duration-150 dark:bg-charcoal"
+  >
+    <div
+      class="text-charcoal/40 text-4xl mb-6 md:mb-8 lg:mb-12 dark:text-white/40"
+    >
+      <i class="bi bi-layers"></i>
+    </div>
+    <h5 class="font-outfit font-medium text-charcoal text-xl dark:text-white">
+      Komplette Produktentwicklung: Web-Apps und native Apps, von der ersten
+      Idee bis zum Launch
+    </h5>
+    <a
+      class="absolute inline-flex justify-center items-center right-0 bottom-0 bg-charcoal w-[50px] h-[50px] rounded-tl-[50%] rounded-br-[50%] text-white hover:bg-charcoal/90 dark:bg-white/10 dark:hover:bg-white/15"
+      [href]="'mailto:' + appSettings.mailAddress"
+    >
+      <i class="bi bi-send"></i>
+    </a>
+  </div>
+
+  <!-- Beratung und Architektur -->
+  <div
+    class="relative bg-white p-8 pr-14 md:px-10 md:py-12 xl:px-12 xl:py-14 rounded-3xl shadow-customShadow hover:shadow-customShadowHover transition ease-out duration-150 dark:bg-charcoal"
+  >
+    <div
+      class="text-charcoal/40 text-4xl mb-6 md:mb-8 lg:mb-12 dark:text-white/40"
+    >
+      <i class="bi bi-diagram-3"></i>
+    </div>
+    <h5 class="font-outfit font-medium text-charcoal text-xl dark:text-white">
+      Technische Beratung und Architektur für nicht-technische Teams
+    </h5>
+    <a
+      class="absolute inline-flex justify-center items-center right-0 bottom-0 bg-charcoal w-[50px] h-[50px] rounded-tl-[50%] rounded-br-[50%] text-white hover:bg-charcoal/90 dark:bg-white/10 dark:hover:bg-white/15"
+      [href]="'mailto:' + appSettings.mailAddress"
+    >
+      <i class="bi bi-send"></i>
+    </a>
+  </div>
+</div>

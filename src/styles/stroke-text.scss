@@ -1,0 +1,20 @@
+/* Stroke Text */
+.stroke-text {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1.4px;
+  -webkit-text-stroke-color: #2c3943;
+}
+.dark .stroke-text {
+  -webkit-text-stroke-color: white;
+}
+.stroke-text-white {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1.4px;
+  -webkit-text-stroke-color: white;
+}
+@media (max-width: 1023.99px) {
+  .stroke-text,
+  .stroke-text-white {
+    -webkit-text-stroke-width: 1.2px;
+  }
+}

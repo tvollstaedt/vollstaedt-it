@@ -1,0 +1,11 @@
+/* Portfolio Filter */
+
+@layer components {
+  .mixitup-control-active {
+    @apply bg-charcoal;
+  }
+
+  .dark .mixitup-control-active {
+    @apply bg-white/15;
+  }
+}

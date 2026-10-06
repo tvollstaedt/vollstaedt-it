@@ -1,0 +1,108 @@
+<!doctype html>
+<!--
+  OG-Image-Vorlage (1200x630) für Link-Vorschaubilder.
+  Platzhalter {{HEADLINE}}, {{SUBLINE}}, {{AVATAR_DATA_URI}} und {{FONT_DATA_URI}}
+  werden von scripts/generate-og-images.mjs ersetzt und per Headless Chrome
+  nach public/images/og/<name>.png gerendert.
+  Manuelle Alternative: Platzhalter von Hand ersetzen, Datei im Browser öffnen
+  und mit 1200x630 screenshotten.
+-->
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @font-face {
+        font-family: 'Outfit';
+        font-style: normal;
+        font-weight: 200 900;
+        src: url('{{FONT_DATA_URI}}') format('woff2');
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+      }
+      body {
+        /* charcoal aus tailwind.config.js */
+        background: #2c3943;
+        font-family: 'Outfit', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 72px 80px;
+        gap: 60px;
+      }
+      .text {
+        max-width: 720px;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+      .brand {
+        /* customPurple aus tailwind.config.js */
+        color: #9c7ece;
+        font-size: 28px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+      }
+      h1 {
+        color: #ffffff;
+        font-size: 62px;
+        font-weight: 500;
+        line-height: 1.15;
+      }
+      .subline {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 1.35;
+      }
+      .person {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        flex-shrink: 0;
+      }
+      .avatar-ring {
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        border: 2px dashed rgba(255, 255, 255, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .avatar-ring img {
+        width: 216px;
+        height: 216px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .name {
+        color: #ffffff;
+        font-size: 28px;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text">
+      <div class="brand">vollstaedt.it</div>
+      <h1>{{HEADLINE}}</h1>
+      <p class="subline">{{SUBLINE}}</p>
+    </div>
+    <div class="person">
+      <div class="avatar-ring">
+        <img src="{{AVATAR_DATA_URI}}" alt="Vollstädt IT Solutions" />
+      </div>
+      <div class="name">Vollstädt IT Solutions</div>
+    </div>
+  </body>
+</html>

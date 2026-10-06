@@ -1,0 +1,80 @@
+<!-- Clients/Testimonial section -->
+<div class="xl:flex py-16 xl:py-[70px] space-y-6 xl:space-x-10 xl:space-y-0">
+  <div class="xl:w-7/12 grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
+    @for (client of clients; track client) {
+      <div
+        class="bg-white/30 p-6 md:p-7 border border-charcoal/20 border-dashed rounded-3xl dark:bg-charcoal/30 dark:border-white/30 flex justify-center items-center"
+      >
+        <a
+          class="opacity-50 transition ease-out duration-[120ms] hover:opacity-100"
+          [href]="client.url"
+          target="_blank"
+        >
+          <img
+            class="inline-block object-contain filter dark:invert dark:brightness-150 dark:contrast-125 transition"
+            [src]="client.image"
+            [ngClass]="client.class"
+            [alt]="client.alt"
+          />
+        </a>
+      </div>
+    }
+  </div>
+  <div
+    class="xl:w-5/12 relative bg-white rounded-3xl p-8 pr-14 md:px-10 md:py-12 xl:px-12 xl:py-14 shadow-customShadow hover:shadow-customShadowHover transition ease-out duration-150 dark:bg-charcoal"
+  >
+    <swiper-container #swiperContainer init="false">
+      @for (review of reviews; track review) {
+        <swiper-slide class="space-y-3">
+          <div class="text-yellow-400">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <p class="text-pColor leading-7 dark:text-white/80">
+            {{ review.text }}
+          </p>
+          <h5
+            class="font-outfit font-medium text-xl text-charcoal dark:text-white"
+          >
+            <div class="flex flex-row gap-4 items-center">
+              @if (review.avatar) {
+                <div
+                  class="min-w-16 rounded-full overflow-hidden border border-charcoal/30 dark:border-0"
+                >
+                  <img
+                    [ngSrc]="review.avatar"
+                    width="64"
+                    height="64"
+                    [alt]="review.author"
+                    class="object-contain"
+                  />
+                </div>
+              }
+
+              <div class="flex flex-col">
+                {{ review.author }}
+                <div
+                  class="font-normal text-lg/tight text-charcoal/80 dark:text-white/60"
+                >
+                  {{ review.company }}
+                </div>
+              </div>
+            </div>
+          </h5>
+        </swiper-slide>
+      }
+    </swiper-container>
+    <!-- end testimonial-slider-->
+    <!-- Slider Pagination -->
+    <div
+      class="absolute right-0 bottom-0 bg-charcoal p-3.5 rounded-tl-[20px] rounded-br-[20px] dark:bg-white/10"
+    >
+      <div
+        class="testimonial-pagination top-0 right-0 bottom-0 left-0 flex"
+      ></div>
+    </div>
+  </div>
+</div>

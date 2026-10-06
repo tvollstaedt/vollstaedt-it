@@ -1,0 +1,11 @@
+/* Testimonial Slider */
+
+.testimonial-pagination::ng-deep {
+  .swiper-pagination-bullet {
+    @apply bg-white/30 w-[5px] h-[5px] mx-[3px] my-0 rounded-md opacity-100 transition-all ease-linear duration-100;
+
+    &.swiper-pagination-bullet-active {
+      @apply bg-white w-[13px];
+    }
+  }
+}

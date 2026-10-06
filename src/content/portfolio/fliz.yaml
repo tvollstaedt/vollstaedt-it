@@ -1,0 +1,54 @@
+slug: fliz
+title: "Fliz – Plattform für productized Services"
+subtitle: "SaaS-Prototyp zur Verwaltung und Automatisierung produktisierter IT-Dienstleistungen"
+type: own
+categories: ["Startup", "SaaS", "Web"]
+services: ["Konzeption", "Architektur", "Fullstack-Entwicklung"]
+technologies:
+  - name: Angular 16
+    url: https://angular.io
+  - name: NestJS
+    url: https://nestjs.com
+  - name: Nx Monorepo
+    url: https://nx.dev
+  - name: Auth0
+    url: https://auth0.com
+  - name: Stripe
+    url: https://stripe.com
+  - name: PostgreSQL
+    url: https://www.postgresql.org
+coverImage: "images/portfolio/fliz/2.webp"
+gallery:
+  - "images/portfolio/fliz/2.webp"
+  - "images/portfolio/fliz/4.webp"
+  - "images/portfolio/fliz/3.webp"
+  - "images/portfolio/fliz/7.webp"
+  - "images/portfolio/fliz/1.webp"
+  - "images/portfolio/fliz/8.webp"
+date: "2023-06-01"
+description: |
+  ### Idee
+
+  Fliz war ein internes SaaS-Projekt mit dem Ziel, Dienstleister:innen im Bereich „Productized Services“ eine Plattform zur Abwicklung ihrer Kundenprozesse bereitzustellen – inklusive Benutzerverwaltung, Zahlungsabwicklung, Aufgabenmanagement und Kundenkommunikation.
+
+  Das System wurde als __multi-tenant-fähige Plattform__ konzipiert: Ein Nutzer kann sowohl Anbieter als auch Kunde oder Mitarbeiter bei anderen Anbietern sein. Für jeden Anbieter wurde automatisiert ein eigenes Kanban-Board pro Kunde erzeugt, über das Aufgaben kommuniziert, priorisiert und abgearbeitet werden konnten.
+
+  [[gallery]]
+
+  ### Meine Rolle
+  Als Ideengeber war ich verantwortlich für die vollständige technische Umsetzung der Plattform. Dazu gehörten die Auswahl, das Design und die Implementierung sämtlicher Services sowie die Integration externer Systeme.
+
+  ### Umsetzung
+
+  Fliz wurde als **Nx-Monorepo** aufgebaut, um Frontend und Backend effizient entwickeln zu können:
+
+  - Das __Frontend__ basiert auf __Angular 16__ mit einem modernen Designsystem und responsivem Layout.
+  - Das __Backend__ nutzt __NestJS__ und eine __PostgreSQL__-Datenbank zur strukturierten Ablage von Nutzern, Aufgaben und Rollen.
+  - Für Authentifizierung und Autorisierung kam __Auth0__ zum Einsatz. Dadurch konnte in kurzer Zeit eine robuste Rechte- und Rollenlogik umgesetzt werden.
+  - Die __Bezahlfunktionalität__ für Anbieter wurde über __Stripe__ eingebunden.
+
+  ### Learnings
+
+  Auch wenn das Projekt letztlich nicht veröffentlicht wurde, war es eine wertvolle Erfahrung in der schnellen Umsetzung komplexer Produktideen. Besonders das Thema **Multi-Tenancy** und das strukturierte Rechte-/Rollensystem in Kombination mit **Auth0** war technisch herausfordernd und spannend.
+
+  Ein weiteres Learning: Bei MVPs und Prototyping kann man sich durch Tools wie __Firebase__ oder __Supabase__ viel Zeit sparen – insbesondere, wenn noch keine individuellen Backend-Anforderungen bestehen.

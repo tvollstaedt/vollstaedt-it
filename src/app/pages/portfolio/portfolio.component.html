@@ -1,0 +1,80 @@
+<div
+  class="container md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1320px] mx-auto px-7"
+>
+  <app-header />
+
+  <div class="py-16 xl:py-[70px]">
+    <div
+      class="flex flex-col lg:flex-row lg:justify-between lg:items-center space-y-4 lg:space-y-0"
+    >
+      <div>
+        <h1
+          class="font-outfit font-medium text-charcoal text-6xl xl:text-7xl leading-[1.2] dark:text-white"
+        >
+          Neuste Projekte
+        </h1>
+      </div>
+      <div>
+        <ul class="filter space-x-2">
+          <li
+            class="list-none inline-block bg-charcoal/90 px-6 py-3 rounded-full text-white cursor-pointer transition ease-linear duration-75 hover:bg-charcoal dark:bg-white/10 dark:hover:bg-white/15"
+            data-filter="all"
+          >
+            Alle
+          </li>
+          @for (type of availableTypes(); track type) {
+            <li
+              class="list-none inline-block bg-charcoal/90 px-6 py-3 rounded-full text-white cursor-pointer transition ease-linear duration-75 hover:bg-charcoal dark:bg-white/10 dark:hover:bg-white/15"
+              [attr.data-filter]="`[data-type='${type}']`"
+            >
+              {{ type | projectType }}
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+    <div
+      #portfolioGrid
+      class="portfolio-grid grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 mt-8 lg:mt-12"
+    >
+      @for (project of sortedPortfolio(); track project; let index = $index) {
+        <div class="portfolio-item" [attr.data-type]="project.type">
+          <a
+            class="relative group block"
+            [routerLink]="'/portfolio/' + project.slug"
+          >
+            <div
+              class="overflow-hidden rounded-lg group-hover:scale-[0.98] transition-all ease-custom duration-500"
+            >
+              <img
+                class="object-cover group-hover:scale-105 transition-all ease-custom duration-500"
+                [ngSrc]="project.coverImage"
+                width="620"
+                height="407"
+                alt=""
+              />
+            </div>
+            <!-- Category -->
+            <div
+              class="z-[1] absolute top-5 right-5 bg-charcoal/30 px-4 py-2 rounded-full backdrop-blur-[5px] font-outfit font-medium uppercase text-sm text-white tracking-[1px] invisible opacity-0 transition-all ease-linear duration-100 group-hover:visible group-hover:opacity-100"
+            >
+              {{ project.type | projectType }}
+            </div>
+            <!-- Caption -->
+            <div
+              class="z-[1] absolute right-5 bottom-5 left-5 opacity-75 transition ease-linear duration-75 group-hover:opacity-100"
+            >
+              <h3
+                class="font-outfit font-semibold text-3xl text-white text-shadow"
+              >
+                {{ project.title }}
+              </h3>
+            </div>
+          </a>
+        </div>
+      }
+    </div>
+  </div>
+
+  <app-footer />
+</div>

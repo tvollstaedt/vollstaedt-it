@@ -1,0 +1,14 @@
+<!-- Sliding Text -->
+<div class="py-12">
+  <swiper-container #swiperContainer init="false">
+    @for (slideText of slideTexts(); track slideText) {
+      <swiper-slide class="w-auto">
+        <h2
+          class="font-poppins font-semibold stroke-text text-5xl md:text-6xl xl:text-7xl leading-tight md:leading-tight xl:leading-tight opacity-25"
+        >
+          {{ slideText }}
+        </h2>
+      </swiper-slide>
+    }</swiper-container
+  ><!-- end swiper -->
+</div>

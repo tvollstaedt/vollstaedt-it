@@ -1,0 +1,101 @@
+<!-- Resume section -->
+<h2
+  id="resume"
+  class="pt-16 pb-10 lg:pt-24 lg:pb-16 text-3xl font-semibold font-outfit text-charcoal dark:text-white"
+>
+  Berufserfahrung (Auszug)
+</h2>
+<div class="xl:flex space-y-12 xl:space-y-0 xl:space-x-10">
+  <div class="xl:w-2/3 space-y-6 pb-4">
+    @for (entry of resumeEntries; track entry) {
+      <div class="lg:flex space-y-2 lg:space-x-6 lg:space-y-0">
+        <div class="lg:min-w-52 lg:text-right">
+          <span
+            class="inline-block bg-white/30 px-6 py-3 rounded-full border border-charcoal/20 border-dashed font-outfit font-medium uppercase text-sm tracking-[1px] text-pColor dark:bg-charcoal/30 dark:border-white/30 dark:text-white/80"
+          >
+            {{ entry.timeRange }}
+          </span>
+        </div>
+        <div>
+          <h4
+            class="font-outfit font-semibold text-charcoal text-2xl dark:text-white flex justify-between items-center gap-2"
+          >
+            {{ entry.title }}
+            @if (entry.logo) {
+              <img
+                class="dark:invert max-h-6 object-contain"
+                [ngSrc]="entry.logo"
+                height="32"
+                width="128"
+                [alt]="entry.company"
+              />
+            }
+          </h4>
+          <h5 class="text-charcoal/50 dark:text-white/50 font-medium text-lg">
+            {{ entry.company }}
+          </h5>
+
+          <span
+            class="inline-block text-xs font-semibold tracking-wide my-2 text-charcoal/50 dark:text-white/80"
+            ><i
+              class="bi mr-1.5"
+              [class.bi-building]="entry.type === 'employment'"
+              [class.bi-briefcase]="entry.type === 'freelance'"
+              [class.bi-rocket-takeoff]="entry.type === 'startup'"
+              [title]="'Anstellungsart: ' + (entry.type | workType)"
+            ></i
+            >{{ entry.type | workType }}</span
+          >
+          <p class="text-pColor leading-7 dark:text-white/80">
+            {{ entry.description }}
+          </p>
+        </div>
+      </div>
+    }
+  </div>
+  <div
+    class="xl:w-1/3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-6 content-start"
+  >
+    <div
+      class="bg-steelBlue p-8 md:p-10 xl:p-12 rounded-3xl shadow-customShadow hover:shadow-customShadowHover transition ease-out duration-150 dark:bg-steelBlueDarker"
+    >
+      <div class="text-white/50 text-4xl mb-8 flex gap-4 items-center">
+        <i class="bi bi-mortarboard"></i>
+        <h3 class="text-xl">Ausbildung</h3>
+      </div>
+      <h5 class="font-outfit font-medium text-xl text-white mb-1">
+        Bachelor of Science IT-Security
+      </h5>
+      <span class="text-white/80">Ruhr-Universität Bochum</span>
+    </div>
+    <div
+      class="bg-steelBlue p-8 md:p-10 xl:p-12 rounded-3xl shadow-customShadow hover:shadow-customShadowHover transition ease-out duration-150 dark:bg-steelBlueDarker"
+    >
+      <div class="text-white/50 text-4xl mb-8 flex gap-4 items-center">
+        <i class="bi bi-award"></i>
+        <h3 class="text-xl">Zertifikate</h3>
+      </div>
+      <ul class="flex flex-col justify-between gap-6">
+        @for (cert of certificates; track cert) {
+          <li>
+            <a [href]="cert.link" target="_blank" class="flex flex-row-reverse">
+              <img
+                [ngSrc]="cert.logo"
+                class="w-14 h-14 object-cover mb-3"
+                width="64"
+                height="64"
+                alt="{{ cert.title }}"
+              />
+              <div class="flex-1">
+                <h5 class="font-outfit font-medium text-xl text-white mb-1">
+                  {{ cert.title }}
+                </h5>
+                <span class="text-white/80">{{ cert.issuer }}</span>
+              </div>
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>

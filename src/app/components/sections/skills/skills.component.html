@@ -1,0 +1,23 @@
+<!-- Skills section -->
+<div
+  class="pt-16 xl:pt-[70px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+>
+  @for (skill of skills; track skill) {
+    <div>
+      <div
+        class="font-outfit font-medium uppercase text-sm tracking-[1px] mb-2 text-charcoal dark:text-white overflow-hidden overflow-ellipsis text-ellipsis"
+      >
+        {{ skill.name }}
+      </div>
+      <div
+        class="animated-progress relative bg-charcoal/10 h-1 mt-1 rounded-md dark:bg-white/10"
+      >
+        <div
+          class="absolute block bg-charcoal w-[10%] h-full rounded-md text-charcoal transition-all ease-custom duration-700 dark:bg-white after:absolute after:-top-7 after:right-0 after:opacity-0 after:font-outfit after:font-medium after:transition-all after:ease-out after:duration-150 dark:after:text-white dark:after:font-normal"
+          [animatedProgress]="skill.amount"
+          [attr.data-progress]="skill.amount"
+        ></div>
+      </div>
+    </div>
+  }
+</div>

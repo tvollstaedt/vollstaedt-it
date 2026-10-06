@@ -1,0 +1,58 @@
+slug: website
+title: "Persönliche Portfolio-Homepage"
+subtitle: "Persönliches Portfolio zur Präsentation meiner Tätigkeit als IT-Freelancer"
+type: own
+categories: ["Fullstack", "Web", "CMS"]
+services: ["Konzeption", "Design", "Entwicklung"]
+technologies:
+  - name: Angular 21
+    url: https://angular.io
+  - name: TailwindCSS
+    url: https://tailwindcss.com
+  - name: ESLint
+    url: https://eslint.org/
+  - name: Prettier
+    url: https://prettier.org
+  - name: Swiper
+    url: https://swiperjs.com/
+  - name: Glightbox
+    url: https://biati-digital.github.io/glightbox/
+  - name: MixItUp
+    url: https://github.com/patrickkunka/mixitup
+# Hinweis: Cover (2.webp) zeigt den aktuellen Stand (Neuerzeugung: pnpm screenshot:portfolio).
+# TODO: Galerie-Bilder 1.webp und 3.webp zeigen noch den alten Website-Stand,
+# bei Gelegenheit analog ersetzen (Unterseiten-Screenshots im Mockup-Stil).
+coverImage: "images/portfolio/vollstaedt-it/2.webp"
+gallery:
+  - "images/portfolio/vollstaedt-it/2.webp"
+  - "images/portfolio/vollstaedt-it/3.webp"
+  - "images/portfolio/vollstaedt-it/1.webp"
+externalUrl: "https://vollstaedt.it"
+sourceCodeUrl: ""
+date: "2025-04-01"
+
+description: |
+  ### Idee
+
+  Dieses Projekt erfüllt gleich mehrere angestrebte Ziele: Eine professionelle Präsentation meiner Tätigkeit als IT-Freelancer, Ort zum Festhalten und verbreiten meiner täglichen Erfahrungen im Geschäft und schließlich eine Referenzarbeit meiner Fähigkeiten.
+
+  ### Meine Rolle
+  Ich habe Konzept, Design und die vollständige technische Umsetzung der Website selbst verantwortet – inklusive CMS, Build-Setup und Deployment.
+
+  ### Umsetzung
+  Die Seite ist vollständig in Angular implementiert und nutzt moderne Ansätze und Fähigkeiten dieses Frameworks. Um optimal für Suchmaschinen ausgerichtet zu sein, nutze ich die __Server Side Rendering (SSR)__-Fähigkeiten von Angular voll aus. Hierbei wird der DOM der jeweiligen Unterseite auf dem Server vorgerendert, so dass nicht-Browser wie Suchmaschinen oder Bots bereits Struktur und Inhalte sämtlicher Seiten verarbeiten können, ohne JavaScript ausführen zu müssen.
+
+  [[gallery]]
+
+  Eine weitere Besonderheit ist das eigens entwickelte YAML-basierte CMS, was mir die einfache, Datei-basierte Pflege der Inhalte ermöglicht, ohne auf externe Abhängigkeiten zurückgreifen zu müssen. Hierfür nutze ich ein YAML-Dateiformat mit Kombination von `ngx-markdown`, um Text-Inhalte in HTML zu rendern.
+
+  Weitere genutzte Angular-Features sind:
+    * Vollständig "Zoneless"
+    * Standalone Components
+    * Lazy loaded routes
+    * Signals / Signal inputs
+    * View Transitions
+    * Control-FLow-Syntax
+    * Resource API zum Nachladen von Inhalten
+
+  Der Sourcecode kann auf Gitlab eingesehen werden.

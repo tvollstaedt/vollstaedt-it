@@ -1,0 +1,63 @@
+slug: roadstory-audio
+title: "Roadstory Audio - App Startup"
+subtitle: "App-basierter Audioguide für individuelle Roadtrips"
+client: Roadstory-Audio
+type: own
+categories: ["Startup", "Mobile", "Backend", "Content-Platform"]
+services: ["Konzeption", "Architektur", "Fullstack-Entwicklung", "Produktentwicklung"]
+technologies:
+  - name: React Native / Expo
+    url: https://expo.dev
+  - name: Angular 19
+    url: https://angular.io
+  - name: NestJS
+    url: https://nestjs.com
+  - name: Supabase
+    url: https://supabase.com
+  - name: Python 3 / FastAPI
+    url: https://fastapi.tiangolo.com
+  - name: Webflow
+    url: https://webflow.com
+  - name: S3 / Object Storage
+    url: https://aws.amazon.com/s3/
+coverImage: "images/portfolio/roadstory/1.webp"
+gallery:
+  - "images/portfolio/roadstory/1.webp"
+  - "images/portfolio/roadstory/2.webp"
+  - "images/portfolio/roadstory/3.webp"
+  - "images/portfolio/roadstory/5.webp"
+externalUrl: "https://roadstory-audio.com"
+date: "2025-07-01"
+highlight: true
+
+description: |
+  ### Idee
+
+  Roadstory Audio ist ein persönlicher Audioguide für Roadtrips. Die App begleitet Nutzer:innen auf Autofahrten und liefert automatisch interessante Inhalte über die Region, Orte entlang der Strecke oder kleine lokale Tipps – direkt über die Lautsprecher des Smartphones.
+
+  Das Projekt entstand aus der gemeinsamen Idee, Reisen persönlicher und informativer zu gestalten – ohne ständiges Tippen oder Googeln während der Fahrt. Die Inhalte werden dabei zentral gepflegt und über eine Kombination aus Geolocation und Audio-Ausgabe in Echtzeit ausgeliefert.
+
+  [[gallery]]
+
+  ### Meine Rolle
+  Ich war als Mitgründer verantwortlich für die gesamte technische Architektur und Umsetzung – von der mobilen App über das Backend bis hin zur Content-Redaktion und CI/CD-Pipelines. Darüber hinaus habe ich Produktideen in konkrete Features übersetzt und das Entwicklungstempo maßgeblich geprägt.
+
+  ### Umsetzung
+
+  Für dieses Projekt habe ich mehrere Subsysteme entwickelt:
+
+  #### <img class="inline m-0 dark:invert" src="images/logos/expo.svg" width="16" height="16" /> Mobile App
+  Entwickelt mit __React Native__ und __Expo__, um ein möglichst performantes, plattformübergreifendes Erlebnis zu schaffen. Die App unterstützt Offlinefähigkeit, Standortverfolgung, Audioausgabe sowie Benutzer-Accounts und gespeicherte Touren.
+
+  #### <img class="inline m-0 dark:invert" src="images/logos/angular.svg" width="16" height="16" /> Tour-Management-UI
+  Webbasierte Verwaltungsoberfläche für Inhalte, Touren und POIs. Entwickelt mit __Angular 19__, modernem UI auf Basis von `spartan/ui` und __Supabase__ als Backend-as-a-Service.
+
+  #### <img class="inline m-0 dark:invert" src="images/logos/fastapi.svg" width="16" height="16" /> TTS-Proxy API
+  Eine Middleware zum automatisierten Erzeugen von Audiotexten (Text-to-Speech) aus Tour-Inhalten. Geschrieben in __Python / FastAPI__, ausgeliefert über einen Server mit S3-Caching und Integration mit Supabase.
+
+  #### <img class="inline m-0 dark:invert" src="images/logos/webflow.svg" width="16" height="16" /> Landingpage & Marketing
+  Die öffentlich zugängliche Landingpage wurde mit __Webflow__ realisiert und dient zur Validierung des Konzepts und Nutzergewinnung. Ergänzt durch eine eigene __NestJS-basierte Webflow-API__, die Webhooks verarbeitet und dynamische Inhalte ermöglicht.
+
+  ### Status
+
+  Aktuell befindet sich Roadstory in einer erweiterten Testphase. Erste interne Nutzer:innen testen die App und geben wertvolles Feedback. Die technischen Grundlagen sind gelegt, die Validierung durch unsere Landingpage verlief erfolgreich und ein Softlaunch ist für die nahe Zukunft geplant.

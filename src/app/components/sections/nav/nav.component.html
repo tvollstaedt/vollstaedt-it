@@ -1,0 +1,157 @@
+<!-- Nav -->
+<nav
+  class="z-10 fixed top-0 left-0 right-0 flex items-center justify-between gap-3 bg-white/90 h-14 lg:h-[72px] px-4 lg:px-7 rounded-b-[20px] backdrop-blur-md shadow-customShadow hover:shadow-customShadowHover transition ease-out duration-150 dark:bg-charcoal"
+>
+  <!-- Branding (global, linksbündig, verlinkt auf die Startseite) -->
+  <a
+    routerLink="/"
+    class="flex items-center gap-2.5 shrink-0"
+    aria-label="Vollstädt IT Solutions – Startseite"
+  >
+    <img
+      src="/assets/brand/icon_vollstaedt.svg"
+      alt=""
+      width="32"
+      height="32"
+      class="h-8 w-auto"
+    />
+    <span class="flex flex-col">
+      <span
+        class="font-outfit font-medium text-[15px] lg:text-lg leading-tight tracking-[0.3px] whitespace-nowrap text-charcoal dark:text-white"
+        >Vollstädt IT Solutions</span
+      >
+      <span
+        class="font-outfit text-[10.5px] lg:text-xs leading-tight whitespace-nowrap text-customPurpleDarker dark:text-customPurple"
+        >Software engineering that ships.</span
+      >
+    </span>
+  </a>
+
+  @if (minimal()) {
+    <!-- Rechts: nur Kontakt + Theme-Toggle -->
+    <div
+      class="flex items-center gap-x-5 font-outfit font-medium uppercase text-sm tracking-[0.5px]"
+    >
+      <a
+        class="relative cursor-pointer text-charcoal transition ease-linear duration-75 hover:text-black dark:text-white dark:hover:text-white lg:before:content-[''] lg:before:absolute lg:before:-bottom-[1px] lg:before:left-0 lg:before:right-0 lg:before:h-px lg:before:bg-black dark:lg:before:bg-white lg:hover:before:w-full lg:before:animate-lineOut lg:hover:before:animate-lineIn"
+        [href]="contactHref()"
+        (click)="scrollToAnchor($event, 'kontakt')"
+        >Kontakt</a
+      >
+      <app-theme-switch class="relative mt-1" />
+    </div>
+  } @else {
+    <!-- Rechts: volle Navigation + Theme-Toggle -->
+    <div class="flex items-center gap-x-5">
+      <!-- Menüpunkte: Desktop inline, Mobil als Dropdown -->
+      <ul
+        class="absolute top-16 right-4 bg-white min-w-52 p-6 rounded-[20px] space-y-2 invisible opacity-0 transition-all ease-linear duration-100 shadow-customShadow lg:shadow-none lg:visible lg:opacity-100 lg:static lg:top-auto lg:right-auto lg:flex lg:items-center lg:space-x-5 lg:space-y-0 lg:bg-transparent lg:p-0 lg:rounded-none font-outfit font-medium uppercase text-sm tracking-[0.5px] dark:bg-charcoal dark:lg:bg-transparent"
+        [class.show]="navOpen()"
+      >
+        @for (item of navItems; track item) {
+          <li class="list-none block lg:inline-block">
+            @if (item.target) {
+              <a
+                class="relative text-charcoal transition ease-linear duration-75 hover:text-black dark:text-white dark:hover:text-white lg:before:content-[''] lg:before:absolute lg:before:-bottom-[1px] lg:before:left-0 lg:before:right-0 lg:before:h-px lg:before:bg-black dark:lg:before:bg-white lg:hover:before:w-full lg:before:animate-lineOut lg:hover:before:animate-lineIn"
+                [href]="item.target"
+                (click)="navOpen.set(false)"
+                >{{ item.name }}</a
+              >
+            } @else {
+              <a
+                class="relative text-charcoal transition ease-linear duration-75 hover:text-black dark:text-white dark:hover:text-white lg:before:content-[''] lg:before:absolute lg:before:-bottom-[1px] lg:before:left-0 lg:before:right-0 lg:before:h-px lg:before:bg-black dark:lg:before:bg-white lg:hover:before:w-full lg:before:animate-lineOut lg:hover:before:animate-lineIn"
+                [routerLink]="item.route"
+                [fragment]="item.fragment ? item.fragment : undefined"
+                (click)="navOpen.set(false)"
+                >{{ item.name }}</a
+              >
+            }
+          </li>
+        }
+      </ul>
+
+      <!-- Desktop-Zusatzmenü (Telefon/E-Mail/Social) -->
+      <div class="hidden lg:block relative">
+        <button
+          class="inline-flex items-center justify-center group h-14 w-10"
+          aria-label="Kontaktinformationen"
+          (click)="additionalMenuOpen.set(!additionalMenuOpen())"
+        >
+          <ng-container
+            *ngTemplateOutlet="
+              burgerButton;
+              context: { $implicit: additionalMenuOpen }
+            "
+          />
+        </button>
+        <div
+          class="absolute right-0 top-full mt-3 bg-white p-7 rounded-[20px] w-[300px] invisible opacity-0 shadow-customShadow hover:shadow-customShadowHover transition ease-out duration-150 dark:bg-charcoal"
+          [class.show]="additionalMenuOpen()"
+        >
+          <h6 class="font-outfit font-semibold dark:text-white">Phone:</h6>
+          <p class="text-pColor dark:text-white/80">
+            <a class="hover:underline" href="tel:+491772807814"
+              >+49 177 280 78 14</a
+            >
+          </p>
+          <div class="mt-4">
+            <h6 class="font-outfit font-semibold dark:text-white">Email:</h6>
+            <p class="text-pColor dark:text-white/80">
+              <a
+                class="hover:underline"
+                [href]="'mailto:' + appSettings.mailAddress"
+                >{{ appSettings.mailAddress }}</a
+              >
+            </p>
+          </div>
+          <ul class="space-x-2 mt-4">
+            @for (socialItem of socialItems; track socialItem) {
+              <li class="list-none inline-block">
+                <a
+                  class="text-charcoal hover:text-black dark:text-white dark:hover:text-white"
+                  [href]="socialItem.target"
+                  target="_blank"
+                  ><i class="bi {{ socialItem.icon }}"></i
+                ></a>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mobile-Menü-Toggle -->
+      <button
+        class="inline-flex justify-center items-center group w-10 h-14 lg:hidden"
+        [class.active]="navOpen()"
+        aria-label="Menü"
+        (click)="navOpen.set(!navOpen())"
+      >
+        <ng-container
+          *ngTemplateOutlet="burgerButton; context: { $implicit: navOpen }"
+        />
+      </button>
+
+      <!-- Dark Mode Switcher -->
+      <app-theme-switch class="relative mt-1" />
+    </div>
+  }
+</nav>
+
+<ng-template #burgerButton let-open>
+  <svg
+    class="ham hamRotate"
+    viewBox="0 0 100 100"
+    width="80"
+    [class.active]="open()"
+  >
+    <path
+      class="line top"
+      d="m 70,33 h -40 c 0,0 -6,1.368796 -6,8.5 0,7.131204 6,8.5013 6,8.5013 l 20,-0.0013"
+    />
+    <path class="line middle" d="m 70,50 h -40" />
+    <path
+      class="line bottom"
+      d="m 69.575405,67.073826 h -40 c -5.592752,0 -6.873604,-9.348582 1.371031,-9.348582 8.244634,0 19.053564,21.797129 19.053564,12.274756 l 0,-40"
+    />
+  </svg>
+</ng-template>

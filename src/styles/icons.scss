@@ -1,0 +1,18 @@
+/* Icons */
+.bi.xing::before {
+  content: " ";
+  width: 16px;
+  height: 16px;
+  background: url(../../public/images/logos/xing.svg);
+  filter: invert(1);
+  background-size: cover;
+}
+
+.bi.pluralsight::before {
+  content: " ";
+  width: 16px;
+  height: 16px;
+  background: url(../../public/images/logos/pluralsight.svg);
+  filter: invert(1);
+  background-size: cover;
+}

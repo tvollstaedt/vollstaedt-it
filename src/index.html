@@ -1,0 +1,58 @@
+<!doctype html>
+<html class="scroll-smooth" lang="de">
+  <head>
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta charset="utf-8" />
+    <meta content="dark light" name="color-scheme" />
+
+    <base href="/" />
+
+    <link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Vollstädt IT" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <style>
+      .preloader div {
+        --g: no-repeat
+          radial-gradient(circle closest-side, #9c7ece 90%, #f1f5fa);
+        background:
+          var(--g) 0 0,
+          var(--g) 0 100%,
+          var(--g) 100% 100%;
+        background-size: 40% 40%;
+      }
+      .dark .preloader div {
+        --g: no-repeat
+          radial-gradient(circle closest-side, #9c7ece 90%, #14181a);
+      }
+      .loaded .preloader {
+        visibility: hidden;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body
+    class="z-[1] overflow-x-hidden bg-bodyBg font-opensans dark:bg-darkBodyBg"
+  >
+    <!-- Page Preloader -->
+    <div
+      class="preloader z-30 fixed top-0 left-0 bg-bodyBg w-full h-full text-center transition-all ease-out duration-500 dark:bg-darkBodyBg"
+    >
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30px] aspect-[1] animate-loaderDots"
+      ></div>
+    </div>
+
+    <app-root></app-root>
+  </body>
+</html>

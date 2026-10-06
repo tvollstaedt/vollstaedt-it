@@ -1,0 +1,265 @@
+:host {
+  display: block;
+  --idle-border: rgb(44 57 67 / 0.18);
+  --idle-text: #515456;
+  --idle-bg: #ffffff;
+  --done: #10b981;
+  --warn: #f59e0b;
+}
+
+:host-context(.dark) {
+  --idle-border: rgb(255 255 255 / 0.22);
+  --idle-text: rgb(255 255 255 / 0.65);
+  --idle-bg: #2c3943;
+}
+
+/*
+ * Hero: Der Grundzustand ist das Ende (Angular 22, alles grün). Die Animation läuft vom
+ * Anfang dorthin; ohne Animation (reduzierte Bewegung) bleibt die Aussage vollständig.
+ */
+.st-old {
+  opacity: 0;
+}
+
+.play .tl-fill {
+  animation: tl-fill 3.2s linear 0.9s both;
+}
+
+.play .tl-node {
+  animation:
+    tl-node 0.3s ease both,
+    pulse-done 0.7s ease-out both;
+  animation-delay: calc(0.9s + var(--i) * 0.4s), calc(0.9s + var(--i) * 0.4s);
+}
+
+/* Start: Angular 14 pulsiert gelb, bevor die Umstellung losläuft. */
+.play .tl-node.tl-start {
+  animation:
+    pulse-warn 0.9s ease-out 0s 1 both,
+    tl-node-start 0.3s ease 0.9s both;
+}
+
+/* Ziel: Angular 22 bekommt nach Ankunft einen ruhigen grünen Ring. */
+.tl-node.tl-end {
+  box-shadow: 0 0 0 6px rgb(16 185 129 / 0.22);
+}
+
+.play .tl-node.tl-end {
+  animation:
+    tl-node 0.3s ease 4.1s both,
+    ring-done 0.6s ease-out 4.1s both;
+}
+
+.play .st-old {
+  animation: fade-out 0.35s ease 4.1s both;
+}
+
+.play .st-new {
+  animation: fade-in 0.45s ease 4.35s both;
+}
+
+.play .t-dot {
+  animation: dot-on 0.25s ease both;
+  animation-delay: calc(4.5s + var(--i) * 70ms);
+}
+
+.play .t-caption {
+  animation: fade-in 0.5s ease 5.4s both;
+}
+
+@keyframes tl-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes pulse-warn {
+  0% {
+    box-shadow: 0 0 0 0 rgb(245 158 11 / 0.55);
+  }
+  100% {
+    box-shadow: 0 0 0 14px rgb(245 158 11 / 0);
+  }
+}
+
+@keyframes pulse-done {
+  0% {
+    box-shadow: 0 0 0 0 rgb(16 185 129 / 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgb(16 185 129 / 0);
+  }
+}
+
+@keyframes ring-done {
+  from {
+    box-shadow: 0 0 0 0 rgb(16 185 129 / 0.5);
+  }
+  to {
+    box-shadow: 0 0 0 6px rgb(16 185 129 / 0.22);
+  }
+}
+
+@keyframes tl-node {
+  from {
+    background-color: var(--idle-bg);
+    border-color: var(--idle-border);
+    color: var(--idle-text);
+  }
+  to {
+    background-color: var(--done);
+    border-color: var(--done);
+    color: #fff;
+  }
+}
+
+@keyframes tl-node-start {
+  from {
+    background-color: var(--warn);
+    border-color: var(--warn);
+    color: #fff;
+  }
+  to {
+    background-color: var(--done);
+    border-color: var(--done);
+    color: #fff;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes dot-on {
+  from {
+    background-color: var(--idle-border);
+    transform: scale(0.6);
+  }
+  to {
+    background-color: var(--done);
+    transform: none;
+  }
+}
+
+/* Scroll-Animationen: nur aktiv, wenn das Script `anim-ready` gesetzt hat. */
+:host(.anim-ready) [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--d, 0ms);
+}
+
+:host(.anim-ready) [data-reveal].in-view {
+  opacity: 1;
+  transform: none;
+}
+
+.process-line {
+  transform-origin: left center;
+}
+
+:host(.anim-ready) .process-line {
+  transform: scaleX(0);
+  transition: transform 1.6s cubic-bezier(0.65, 0, 0.35, 1) 0.2s;
+}
+
+:host(.anim-ready) .in-view .process-line {
+  transform: scaleX(1);
+}
+
+:host(.anim-ready) .adv {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(0.3s + var(--i) * 0.35s);
+}
+
+:host(.anim-ready) .in-view .adv {
+  opacity: 1;
+  transform: none;
+}
+
+:host(.anim-ready) .patch-no {
+  opacity: 0;
+  transform: scale(0.85);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  transition-delay: calc(0.8s + var(--i) * 0.35s);
+}
+
+:host(.anim-ready) .in-view .patch-no {
+  opacity: 1;
+  transform: none;
+}
+
+:host(.anim-ready) .in-view .zero {
+  animation: pulse-risk 0.9s ease-out 1.9s both;
+}
+
+@keyframes pulse-risk {
+  0% {
+    box-shadow: 0 0 0 0 rgb(244 63 94 / 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 14px rgb(244 63 94 / 0);
+  }
+}
+
+.bar-fill {
+  width: var(--w);
+}
+
+:host(.anim-ready) .bar-fill {
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0.2s);
+}
+
+:host(.anim-ready) .in-view .bar-fill {
+  width: var(--w);
+}
+
+:host(.anim-ready) .test-dot {
+  background-color: var(--idle-border);
+  transform: scaleY(0.6);
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+  transition-delay: calc(0.9s + var(--i) * 45ms);
+}
+
+:host(.anim-ready) .in-view .test-dot {
+  background-color: var(--done);
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .play * {
+    animation: none !important;
+  }
+}

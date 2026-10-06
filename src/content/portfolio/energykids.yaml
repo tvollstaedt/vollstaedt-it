@@ -1,0 +1,52 @@
+slug: energykids
+title: "EnergyKids – Nachhaltigkeit spielerisch vermitteln"
+subtitle: "2D-Multiplayer-Spiel als Hackathon-Projekt"
+client: Ista SE
+type: client
+categories: ["Gamification", "Hackathon", "Sustainability", "Web"]
+services: ["Idee", "Entwicklung", "Prototyping", "Gamification-Konzept"]
+technologies:
+  - name: Phaser
+    url: https://phaser.io
+  - name: Render
+    url: https://render.com
+  - name: HTML5
+    url: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
+coverImage: "images/portfolio/energykids/5.webp"
+gallery:
+  - "images/portfolio/energykids/5.webp"
+  - "images/portfolio/energykids/1.webp"
+  - "images/portfolio/energykids/3.webp"
+  - "images/portfolio/energykids/4.webp"
+  - "images/portfolio/energykids/2.webp"
+externalUrl: "https://energykids.onrender.com"
+sourceCodeUrl: ""
+date: "2025-01-01"
+
+description: |
+  ### Idee
+
+  EnergyKids wurde im Rahmen eines internen Hackathons bei ista SE entwickelt – mit dem Ziel, **Nachhaltigkeit für Kinder erlebbar zu machen** und gleichzeitig die Marke ista durch Gamification sympathisch und modern zu positionieren.
+
+  Die Grundidee: Ein **Multiplayer-Minispiel**, das auf spielerische Weise Umweltthemen wie CO₂-Reduktion, Energieeffizienz und gemeinschaftliches Handeln vermittelt. Kinder schlüpfen in die Rolle von „Kyo“, dem Unternehmensmaskottchen, und retten durch erfolgreich absolvierte Mini-Games ihre Stadt vor Umweltkatastrophen.
+
+  Das Spiel richtet sich insbesondere an **jüngere Zielgruppen**, z.B. auf Messen oder an Schulen – als interaktives Element für Employer Branding und Azubi-Gewinnung.
+
+  [[gallery]]
+
+  ### Meine Rolle
+  Ich war Teil des interdisziplinären Hackathon-Teams und habe die Spielidee maßgeblich mitentwickelt. Zusätzlich war ich für die Auswahl der eingesetzten Technologien verantwortlich und habe die technische Umsetzung des Prototyps aktiv mitgestaltet – von der Spiellogik bis zum Deployment.
+
+  ### Umsetzung
+
+  Der erste Prototyp wurde in weniger als drei Tagen mit __PhaserJS__ umgesetzt und bei __Render.com__ deployed, was uns eine extrem schnelle Ladezeit und problemlose Veröffentlichung ermöglichte.
+
+  Die Stadt verändert sich dynamisch je nach Punktestand der Spieler – sie wird sauberer und grüner, je erfolgreicher die Spieler:innen sind. Die Spieler treten im lokalen 1-vs-1-Duell gegeneinander an, weitere Spielmodi (z.B. Multiplayer über Netzwerk) sind angedacht.
+
+  Das Design wurde in enger Abstimmung mit den Marketing- und Designteams entwickelt und setzt auf vertraute Markenelemente (Kyo, Farben, Schriften) und einen visuell kinderfreundlichen Stil.
+
+  ### Wirkung
+
+  - Das Projekt wurde __intern ausgezeichnet__ und hat innerhalb kürzester Zeit hohe Aufmerksamkeit bei Kolleg:innen und Führungskräften erzeugt.
+  - Es diente als __Best-Practice für Gamification__ im Unternehmenskontext und wird als interaktives Element z.B. auf Karrieremessen und Azubi-Kampagnen diskutiert.
+  - Die Idee kann leicht weiterentwickelt und skaliert werden – mit mehr Mini-Games, Netzwerk-Multiplayer oder Integration in Employer-Branding-Strategien.

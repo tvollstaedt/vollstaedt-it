@@ -1,0 +1,4 @@
+<main (mousemove)="coords = { x: $event.clientX, y: $event.clientY }">
+  <app-gradient-cursor [coords]="coords" />
+  <router-outlet />
+</main>

@@ -1,0 +1,859 @@
+<div
+  class="container md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1320px] mx-auto px-7"
+>
+  <app-header [minimal]="true" />
+
+  <div class="pt-14 xl:pt-[70px] space-y-24 lg:space-y-32 mb-20">
+    <!-- Hero -->
+    <section
+      class="relative grid grid-cols-1 xl:grid-cols-[1.05fr_1fr] gap-12 xl:gap-16 items-center"
+    >
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute -z-10 right-0 top-10 w-[520px] h-[520px] max-w-full rounded-full bg-customPurple/20 blur-3xl"
+      ></div>
+
+      <div class="space-y-7">
+        <div
+          class="inline-flex items-center bg-white/30 px-5 py-2.5 rounded-full border border-charcoal/20 border-dashed text-pColor dark:bg-charcoal/30 dark:border-white/30 dark:text-white/80"
+        >
+          <span
+            class="relative inline-block w-2 h-2 bg-customPurple rounded-full me-3"
+          ></span>
+          <span>Für Unternehmen mit Angular-Anwendungen</span>
+        </div>
+        <h1
+          class="font-outfit font-medium text-charcoal text-5xl md:text-[64px] leading-[1.05] tracking-tight dark:text-white"
+        >
+          Ihr Portal läuft.<br />
+          <span class="text-customPurple">Der Support ist ausgelaufen.</span>
+        </h1>
+        <p
+          class="text-pColor text-xl leading-relaxed max-w-xl dark:text-white/80"
+        >
+          Ich bringe Ihre Angular-Anwendung auf den aktuellen Stand, zum
+          Festpreis und mit Tests, die zeigen, dass die vereinbarten Abläufe
+          danach funktionieren wie vorher. Ein eigenes Angular-Team brauchen Sie
+          dafür nicht.
+        </p>
+        <div class="flex flex-wrap items-center gap-x-7 gap-y-4 pt-1">
+          <a
+            class="inline-block px-7 py-5 rounded-full text-white cursor-pointer transition ease-linear duration-75 font-poppins text-xl font-medium bg-customPurple/90 hover:bg-customPurple/70"
+            [href]="bookingLink"
+            target="_blank"
+            rel="noopener"
+            (click)="trackCtaClick()"
+          >
+            <i class="bi bi-calendar-check mr-2"></i> Termin vereinbaren<span
+              class="sr-only"
+            >
+              (öffnet in neuem Tab)</span
+            >
+          </a>
+          <a
+            href="/angular#ablauf"
+            (click)="scrollToSection($event, 'ablauf')"
+            class="font-medium text-charcoal underline-offset-4 hover:underline dark:text-white"
+            >So läuft es ab <i class="bi bi-arrow-down ml-1"></i
+          ></a>
+        </div>
+        <p
+          class="flex items-start gap-2.5 text-sm font-medium text-amber-700 dark:text-amber-400"
+        >
+          <i class="bi bi-calendar-x mt-px" aria-hidden="true"></i>
+          <span
+            >Auch Angular 20 bekommt nur noch bis zum 28. November 2026
+            Sicherheitsupdates.</span
+          >
+        </p>
+      </div>
+
+      <!-- Die Animation erzählt das Angebot: 14 → 22, danach grüne Abnahmetests -->
+      <figure
+        class="relative bg-white rounded-3xl shadow-customShadow p-6 md:p-10 dark:bg-charcoal"
+        aria-label="Animation: Ein Portal wird Version für Version von Angular 14 auf Angular 22 gebracht, danach bestehen alle Abnahmetests."
+      >
+        <div class="flex items-center justify-between gap-4">
+          <div class="flex items-center gap-1.5 min-w-0">
+            <span
+              class="w-2.5 h-2.5 rounded-full bg-charcoal/15 dark:bg-white/20"
+            ></span>
+            <span
+              class="w-2.5 h-2.5 rounded-full bg-charcoal/15 dark:bg-white/20"
+            ></span>
+            <span
+              class="w-2.5 h-2.5 rounded-full bg-charcoal/15 dark:bg-white/20"
+            ></span>
+            <span class="ml-3 truncate text-sm text-pColor dark:text-white/60"
+              >portal.ihre-firma.de</span
+            >
+          </div>
+          <button
+            type="button"
+            (click)="replayHero()"
+            class="shrink-0 w-9 h-9 rounded-full grid place-items-center text-pColor hover:bg-charcoal/5 hover:text-charcoal dark:text-white/60 dark:hover:bg-white/10 dark:hover:text-white transition"
+            aria-label="Animation erneut abspielen"
+          >
+            <i class="bi bi-arrow-repeat"></i>
+          </button>
+        </div>
+
+        @for (k of [replayKey]; track k) {
+          <div class="play mt-8 space-y-10">
+            <div class="grid min-h-[3.25rem] sm:min-h-0">
+              <div
+                class="st-old [grid-area:1/1] flex items-start gap-2.5 text-lg font-medium text-amber-600 dark:text-amber-400"
+              >
+                <i class="bi bi-exclamation-triangle-fill mt-0.5"></i>
+                <span>Angular 14 · Support ausgelaufen im November 2023</span>
+              </div>
+              <div
+                class="st-new [grid-area:1/1] flex items-start gap-2.5 text-lg font-medium text-emerald-600 dark:text-emerald-400"
+              >
+                <i class="bi bi-check-circle-fill mt-0.5"></i>
+                <span>Angular 22 · Support bis Juni 2028</span>
+              </div>
+            </div>
+
+            <div class="relative">
+              <div
+                class="absolute left-[17px] right-[17px] top-1/2 h-[3px] -translate-y-1/2 rounded-full bg-charcoal/10 dark:bg-white/15"
+              ></div>
+              <div
+                class="tl-fill absolute left-[17px] right-[17px] top-1/2 h-[3px] -translate-y-1/2 rounded-full bg-emerald-500 origin-left"
+              ></div>
+              <ol
+                class="relative flex justify-between list-none p-0 m-0"
+                aria-hidden="true"
+              >
+                @for (v of versions; track v; let i = $index) {
+                  <li
+                    class="tl-node w-[26px] h-[26px] sm:w-[34px] sm:h-[34px] rounded-full grid place-items-center border-2 text-[11px] sm:text-[13px] font-semibold bg-emerald-500 border-emerald-500 text-white"
+                    [class.tl-start]="i === 0"
+                    [class.tl-end]="i === versions.length - 1"
+                    [style.--i]="i"
+                  >
+                    {{ v }}
+                  </li>
+                }
+              </ol>
+            </div>
+
+            <div
+              class="pt-5 border-t border-charcoal/10 dark:border-white/10 flex flex-wrap items-center justify-between gap-4"
+            >
+              <div class="flex gap-1.5" aria-hidden="true">
+                @for (t of heroTests; track t) {
+                  <span
+                    class="t-dot w-3 h-3 rounded-full bg-emerald-500"
+                    [style.--i]="t"
+                  ></span>
+                }
+              </div>
+              <span
+                class="t-caption text-sm font-medium text-emerald-600 dark:text-emerald-400"
+                >Alle Abnahmetests bestanden</span
+              >
+            </div>
+          </div>
+        }
+      </figure>
+    </section>
+
+    <!-- Zahlen aus der eigenen Messung -->
+    <section class="space-y-5">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        @for (s of stats; track s.label; let i = $index) {
+          <div
+            data-reveal
+            [style.--d]="i * 120 + 'ms'"
+            class="p-8 rounded-3xl bg-white shadow-customShadow dark:bg-charcoal"
+          >
+            <div
+              class="font-outfit font-semibold text-5xl md:text-6xl tracking-tight text-customPurple tabular-nums"
+              [attr.data-count]="s.value"
+              [attr.data-suffix]="s.suffix"
+            >
+              {{ s.display }}
+            </div>
+            <p class="mt-3 text-lg text-pColor dark:text-white/80">
+              {{ s.label }}
+            </p>
+          </div>
+        }
+      </div>
+      <p class="text-xs text-pColor/80 dark:text-white/50">
+        Eigene Messung im September 2026 über öffentlich erreichbare
+        Kundenportale aus dem Common Crawl.
+      </p>
+    </section>
+
+    <!-- Problem -->
+    <section class="space-y-8">
+      <h2
+        data-reveal
+        class="font-outfit font-medium text-4xl md:text-5xl tracking-tight text-charcoal leading-[1.15] dark:text-white"
+      >
+        Kommt Ihnen das bekannt vor?
+      </h2>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div
+          data-reveal
+          class="lg:col-span-2 lg:row-span-2 p-8 md:p-10 rounded-3xl bg-white shadow-customShadow dark:bg-charcoal flex flex-col justify-between gap-10"
+        >
+          <div
+            class="rounded-2xl border border-charcoal/10 bg-bodyBg p-5 md:p-6 space-y-4 max-w-md dark:border-white/10 dark:bg-darkBodyBg/60"
+            aria-label="Beispiel eines Tickets"
+          >
+            <div class="flex items-center justify-between text-sm">
+              <span class="font-mono text-pColor dark:text-white/60"
+                >PORTAL-412</span
+              >
+              <span
+                class="px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-700 text-xs font-semibold dark:text-amber-400"
+                >Offen</span
+              >
+            </div>
+            <div
+              class="font-outfit font-medium text-xl text-charcoal dark:text-white"
+            >
+              Angular auf aktuelle Version heben
+            </div>
+            <dl class="grid grid-cols-2 gap-4 text-sm">
+              <div>
+                <dt class="text-pColor dark:text-white/50">Erstellt vor</dt>
+                <dd
+                  class="mt-0.5 font-outfit text-2xl font-medium text-charcoal dark:text-white"
+                >
+                  <span data-count="742">742</span> Tagen
+                </dd>
+              </div>
+              <div>
+                <dt class="text-pColor dark:text-white/50">Verschoben</dt>
+                <dd
+                  class="mt-0.5 font-outfit text-2xl font-medium text-charcoal dark:text-white"
+                >
+                  9 Mal
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <p
+            class="font-outfit text-2xl md:text-3xl leading-snug text-charcoal dark:text-white"
+          >
+            Das Update steht seit Jahren auf der Liste. Irgendwas ist immer
+            dringender.
+          </p>
+        </div>
+        <div
+          data-reveal
+          style="--d: 120ms"
+          class="p-8 rounded-3xl bg-white shadow-customShadow dark:bg-charcoal transition-transform hover:-translate-y-1"
+        >
+          <i class="bi bi-buildings text-customPurple text-3xl"></i>
+          <p
+            class="mt-5 font-outfit text-xl leading-snug text-charcoal dark:text-white"
+          >
+            Die Agentur, die das Portal gebaut hat, gibt es so nicht mehr.
+          </p>
+        </div>
+        <div
+          data-reveal
+          style="--d: 240ms"
+          class="p-8 rounded-3xl bg-white shadow-customShadow dark:bg-charcoal transition-transform hover:-translate-y-1"
+        >
+          <i class="bi bi-clipboard-check text-customPurple text-3xl"></i>
+          <p
+            class="mt-5 font-outfit text-xl leading-snug text-charcoal dark:text-white"
+          >
+            Im nächsten Audit fragt jemand, welche Software keine Updates mehr
+            bekommt.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Risiken -->
+    <section class="space-y-6">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-16 items-center"
+      >
+        <div data-reveal class="space-y-9">
+          <h2
+            class="font-outfit font-medium text-4xl md:text-5xl tracking-tight text-charcoal leading-[1.15] dark:text-white"
+          >
+            Neue Lücken werden gefunden.<br />
+            <span class="text-customPurple"
+              >Alte Versionen bekommen keinen Patch.</span
+            >
+          </h2>
+          <ul class="space-y-5 list-none p-0 m-0">
+            @for (r of risks; track r.text) {
+              <li class="flex items-start gap-4">
+                <span
+                  class="shrink-0 w-11 h-11 rounded-2xl grid place-items-center bg-rose-500/10 text-rose-600 dark:text-rose-400"
+                  ><i class="bi text-xl" [ngClass]="r.icon"></i
+                ></span>
+                <span class="pt-2 text-lg text-charcoal dark:text-white/90">{{
+                  r.text
+                }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+
+        <figure
+          data-anim
+          class="lg:order-first bg-white rounded-3xl shadow-customShadow p-6 md:p-8 space-y-6 dark:bg-charcoal"
+          aria-label="Sicherheitsmeldungen zu Angular seit Januar 2026"
+        >
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <div
+                class="font-outfit font-medium text-xl text-charcoal dark:text-white"
+              >
+                Sicherheitsmeldungen zu Angular
+              </div>
+              <div class="mt-1 text-sm text-pColor dark:text-white/60">
+                seit Januar 2026, {{ advisoryHighCount }} davon mit Schweregrad
+                hoch
+              </div>
+            </div>
+            <div
+              class="font-outfit font-semibold text-5xl leading-none tabular-nums text-charcoal dark:text-white"
+              [attr.data-count]="advisoryCount"
+            >
+              {{ advisoryCount }}
+            </div>
+          </div>
+
+          <ul class="space-y-3 list-none p-0 m-0">
+            @for (a of advisories; track a.id; let i = $index) {
+              <li
+                class="adv rounded-2xl border border-charcoal/10 bg-bodyBg p-4 space-y-2.5 dark:border-white/10 dark:bg-darkBodyBg/60"
+                [style.--i]="i"
+              >
+                <div
+                  class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs"
+                >
+                  <span
+                    class="px-2 py-0.5 rounded-full font-semibold"
+                    [ngClass]="
+                      a.high
+                        ? 'bg-rose-500/15 text-rose-700 dark:text-rose-400'
+                        : 'bg-amber-500/15 text-amber-700 dark:text-amber-400'
+                    "
+                    >{{ a.high ? "Hoch" : "Mittel" }}</span
+                  >
+                  <span class="font-mono text-pColor dark:text-white/60">{{
+                    a.id
+                  }}</span>
+                  <span class="text-pColor dark:text-white/50">{{
+                    a.date
+                  }}</span>
+                </div>
+                <div class="font-medium text-charcoal dark:text-white">
+                  {{ a.title }}
+                </div>
+                <div
+                  class="flex flex-wrap items-center gap-1.5 text-xs font-semibold"
+                >
+                  <span class="sr-only"
+                    >Patch für Angular 22, 21 und 20, keiner für 19 und
+                    älter.</span
+                  >
+                  <span
+                    aria-hidden="true"
+                    class="mr-1 font-normal text-pColor dark:text-white/50"
+                    >Patch</span
+                  >
+                  @for (v of patchedVersions; track v) {
+                    <span
+                      aria-hidden="true"
+                      class="px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-400"
+                      ><i class="bi bi-check-lg mr-0.5"></i>{{ v }}</span
+                    >
+                  }
+                  <span
+                    aria-hidden="true"
+                    class="patch-no px-2 py-0.5 rounded-full bg-rose-500/15 text-rose-700 dark:text-rose-400"
+                    ><i class="bi bi-x-lg mr-1"></i>19 und älter</span
+                  >
+                </div>
+              </li>
+            }
+          </ul>
+
+          <div
+            class="pt-5 border-t border-charcoal/10 dark:border-white/10 flex items-center justify-between gap-4"
+          >
+            <span class="text-sm text-pColor dark:text-white/70"
+              >Davon geschlossen für Angular 18 und älter</span
+            >
+            <span
+              class="zero shrink-0 px-3.5 py-1 rounded-full bg-rose-500/15 font-outfit font-semibold text-2xl tabular-nums text-rose-600 dark:text-rose-400"
+              >0</span
+            >
+          </div>
+        </figure>
+      </div>
+      <p class="text-xs text-pColor/80 dark:text-white/50">
+        Quelle:
+        <a
+          class="underline hover:text-charcoal dark:hover:text-white"
+          href="https://github.com/angular/angular/security/advisories"
+          target="_blank"
+          rel="noopener"
+          >Sicherheitsmeldungen des Angular-Teams</a
+        >, Stand Oktober 2026. Nicht jede Lücke betrifft jedes Portal. Ob Ihres
+        betroffen ist, zeigt der Code-Check.
+      </p>
+    </section>
+
+    <!-- Ablauf -->
+    <section id="ablauf" class="scroll-mt-24 space-y-12">
+      <h2
+        data-reveal
+        class="font-outfit font-medium text-4xl md:text-5xl tracking-tight text-charcoal leading-[1.15] dark:text-white"
+      >
+        In vier Schritten wieder aktuell
+      </h2>
+      <div data-anim class="relative">
+        <div
+          class="hidden lg:block absolute left-6 right-6 top-6 h-[2px] bg-charcoal/10 dark:bg-white/10"
+        ></div>
+        <div
+          class="process-line hidden lg:block absolute left-6 right-6 top-6 h-[2px] bg-customPurple"
+        ></div>
+        <ol
+          class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 list-none p-0 m-0"
+        >
+          @for (step of steps; track step.title; let i = $index) {
+            <li
+              data-reveal
+              [style.--d]="i * 160 + 200 + 'ms'"
+              class="space-y-3"
+            >
+              <div
+                class="w-12 h-12 rounded-full grid place-items-center bg-customPurple text-white font-outfit font-medium text-lg ring-8 ring-bodyBg dark:ring-darkBodyBg"
+              >
+                {{ i + 1 }}
+              </div>
+              <div class="pt-2">
+                <h3
+                  class="font-outfit font-medium text-2xl text-charcoal dark:text-white"
+                >
+                  {{ step.title }}
+                </h3>
+                <div class="text-sm font-semibold text-customPurple">
+                  {{ step.meta }}
+                </div>
+              </div>
+              <p class="text-pColor text-lg dark:text-white/80">
+                {{ step.text }}
+              </p>
+            </li>
+          }
+        </ol>
+      </div>
+      <p data-reveal class="text-pColor dark:text-white/60">
+        Noch auf AngularJS, also Version 1.x? Dann geht es um eine
+        Neuentwicklung. Auch das klären wir im Kurz-Check.
+      </p>
+    </section>
+
+    <!-- Ergebnis -->
+    <section
+      class="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-16 items-center"
+    >
+      <div data-reveal class="space-y-7">
+        <h2
+          class="font-outfit font-medium text-4xl md:text-5xl tracking-tight text-charcoal leading-[1.15] dark:text-white"
+        >
+          Am Ende haben Sie es schwarz auf weiß.
+        </h2>
+        <ul class="space-y-4 list-none p-0 m-0">
+          @for (item of deliverables; track item) {
+            <li
+              class="flex items-start gap-3 text-lg text-charcoal dark:text-white/90"
+            >
+              <i
+                class="bi bi-check2 text-2xl leading-none text-customPurple"
+              ></i>
+              <span>{{ item }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <figure
+        data-anim
+        class="bg-white rounded-3xl shadow-customShadow p-6 md:p-8 space-y-7 dark:bg-charcoal"
+        aria-label="Beispiel eines Abschlussberichts"
+      >
+        <div class="flex items-center justify-between gap-4">
+          <div
+            class="font-outfit font-medium text-xl text-charcoal dark:text-white"
+          >
+            Abschlussbericht
+          </div>
+          <span
+            class="text-xs px-3 py-1 rounded-full border border-dashed border-charcoal/30 text-pColor dark:border-white/30 dark:text-white/60"
+            >Beispiel</span
+          >
+        </div>
+
+        <div class="flex items-center justify-between gap-4">
+          <span class="text-pColor dark:text-white/70">Angular-Version</span>
+          <span class="flex items-center gap-3 font-outfit font-medium text-lg">
+            <span
+              class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-700 dark:text-amber-400"
+              >14</span
+            >
+            <i class="bi bi-arrow-right text-pColor dark:text-white/50"></i>
+            <span
+              class="px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-400"
+              >22</span
+            >
+          </span>
+        </div>
+
+        @for (row of report; track row.label; let i = $index) {
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between gap-4 text-sm">
+              <span class="text-pColor dark:text-white/70">{{
+                row.label
+              }}</span>
+              <span class="text-charcoal dark:text-white">
+                <span class="text-pColor line-through dark:text-white/50">{{
+                  row.before
+                }}</span>
+                <span class="mx-1.5 text-pColor dark:text-white/40">→</span>
+                <span class="font-semibold">{{ row.after }}</span>
+              </span>
+            </div>
+            <div class="space-y-1.5">
+              <div class="h-2 rounded-full bg-amber-500/60"></div>
+              <div class="h-2 rounded-full bg-charcoal/5 dark:bg-white/5">
+                <div
+                  class="bar-fill h-2 rounded-full bg-emerald-500"
+                  [style.--w]="row.width + '%'"
+                  [style.--d]="300 + i * 200 + 'ms'"
+                ></div>
+              </div>
+            </div>
+          </div>
+        }
+
+        <div class="space-y-3">
+          <div class="flex items-center justify-between gap-4 text-sm">
+            <span class="text-pColor dark:text-white/70">Abnahmetests</span>
+            <span class="font-semibold text-emerald-600 dark:text-emerald-400"
+              >24 von 24 bestanden</span
+            >
+          </div>
+          <div class="grid grid-cols-12 gap-1.5" aria-hidden="true">
+            @for (t of reportTests; track t) {
+              <span
+                class="test-dot h-2.5 rounded-full bg-emerald-500"
+                [style.--i]="t"
+              ></span>
+            }
+          </div>
+        </div>
+      </figure>
+    </section>
+
+    <!-- Zusage -->
+    <section
+      data-reveal
+      class="relative overflow-hidden rounded-3xl p-10 md:p-14 bg-customPurple text-white"
+    >
+      <i
+        aria-hidden="true"
+        class="bi bi-patch-check absolute -right-8 -bottom-14 text-[240px] leading-none opacity-15"
+      ></i>
+      <p
+        class="relative font-outfit font-medium text-3xl md:text-[42px] leading-tight tracking-tight max-w-3xl"
+      >
+        Sie zahlen einen Festpreis. Besteht die Abnahme nicht, bessere ich nach,
+        ohne Aufpreis.
+      </p>
+    </section>
+
+    <!-- Preise -->
+    <section id="preise" class="scroll-mt-24 space-y-10">
+      <div data-reveal class="space-y-4">
+        <h2
+          class="font-outfit font-medium text-4xl md:text-5xl tracking-tight text-charcoal leading-[1.15] dark:text-white"
+        >
+          Was es kostet
+        </h2>
+        <p class="text-pColor text-xl dark:text-white/80">
+          Den Preis kennen Sie, bevor die Arbeit beginnt. Die Umstellung des
+          Codes übernehme ich vollständig. Von Ihnen brauche ich Zugriff auf den
+          Code, eine Testumgebung mit Testdaten und jemanden, der die neue
+          Version einspielt.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div
+          data-reveal
+          class="p-7 rounded-3xl bg-white shadow-customShadow dark:bg-charcoal flex flex-col gap-4"
+        >
+          <h3
+            class="font-outfit font-medium text-2xl text-charcoal dark:text-white"
+          >
+            Kurz-Check
+          </h3>
+          <div
+            class="font-outfit font-semibold text-4xl tracking-tight text-charcoal dark:text-white"
+          >
+            kostenlos
+          </div>
+          <p class="text-pColor dark:text-white/80">
+            20 Minuten, von außen oder gemeinsam am Bildschirm. Danach wissen
+            Sie, ob sich der nächste Schritt lohnt.
+          </p>
+          <a
+            class="mt-auto font-medium text-charcoal underline-offset-4 hover:underline dark:text-white"
+            [href]="bookingLink"
+            target="_blank"
+            rel="noopener"
+            (click)="trackCtaClick()"
+            >Termin vereinbaren <i class="bi bi-arrow-right ml-1"></i
+            ><span class="sr-only"> (öffnet in neuem Tab)</span></a
+          >
+        </div>
+
+        <div
+          data-reveal
+          style="--d: 120ms"
+          class="p-7 rounded-3xl bg-white shadow-customShadow dark:bg-charcoal flex flex-col gap-4"
+        >
+          <h3
+            class="font-outfit font-medium text-2xl text-charcoal dark:text-white"
+          >
+            Code-Check
+          </h3>
+          <div
+            class="font-outfit font-semibold text-4xl tracking-tight text-charcoal dark:text-white"
+          >
+            990 €
+          </div>
+          <p class="text-pColor dark:text-white/80">
+            Auftaktgespräch, ein Tag Analyse Ihres Codes und ein schriftliches
+            Ergebnis, in aller Regel mit Festpreis. Beauftragen Sie die
+            Migration innerhalb von drei Monaten, wird der Betrag voll
+            angerechnet.
+          </p>
+          <a
+            class="mt-auto inline-block text-center px-5 py-3 rounded-full text-white font-poppins font-medium bg-customPurple/90 hover:bg-customPurple/70 transition ease-linear duration-75"
+            [href]="codeCheckOrderLink"
+            (click)="trackOrderClick('stripe')"
+            >Code-Check bestellen</a
+          >
+          <p class="text-xs text-pColor dark:text-white/60">
+            Start innerhalb von zwei Wochen, Ergebnis zehn Arbeitstage nach
+            Beginn der Analyse. Lieber auf Rechnung?
+            <a
+              class="underline hover:text-charcoal dark:hover:text-white"
+              [href]="codeCheckInvoiceLink"
+              (click)="trackOrderClick('rechnung')"
+              >Eine kurze Mail</a
+            >
+            genügt.
+          </p>
+        </div>
+
+        <div
+          data-reveal
+          style="--d: 240ms"
+          class="md:col-span-2 xl:col-span-3 xl:order-last p-7 md:p-9 rounded-3xl bg-white shadow-customShadow ring-2 ring-customPurple dark:bg-charcoal grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-6"
+        >
+          <div class="flex flex-col gap-4">
+            <h3
+              class="font-outfit font-medium text-2xl text-charcoal dark:text-white"
+            >
+              Migration
+            </h3>
+            <div
+              class="text-xs font-semibold uppercase tracking-widest text-pColor dark:text-white/50"
+            >
+              Grundpreise
+            </div>
+            <dl class="m-0 space-y-3">
+              @for (t of tiers; track t.name) {
+                <div
+                  class="flex items-baseline justify-between gap-4 border-b border-charcoal/10 pb-2 dark:border-white/10"
+                >
+                  <dt>
+                    <span
+                      class="font-outfit font-medium text-charcoal dark:text-white"
+                      >{{ t.name }}</span
+                    >
+                    <span
+                      class="block text-sm text-pColor dark:text-white/60"
+                      >{{ t.versions }}</span
+                    >
+                  </dt>
+                  <dd
+                    class="m-0 font-outfit font-semibold text-lg text-charcoal whitespace-nowrap dark:text-white"
+                  >
+                    {{ t.price }}
+                  </dd>
+                </div>
+              }
+            </dl>
+          </div>
+          <div class="flex flex-col gap-5 lg:pt-14">
+            <p class="text-charcoal dark:text-white">
+              Die Grundpreise gelten für Anwendungen bis 30 Seiten, eine Seite
+              ist alles mit eigener Adresse. Dazu kommen 2.000 € je angefangene
+              weitere 10 Seiten und, falls der Code-Check etwas findet, feste
+              Positionen, etwa für nicht mehr gepflegte Bibliotheken.
+              <strong class="font-semibold"
+                >Den Gesamtpreis kennen Sie vor dem Start.</strong
+              >
+            </p>
+            <p class="text-pColor dark:text-white/70">
+              Inklusive Abnahmetests: Jede Seite wird vor und nach der
+              Umstellung automatisch verglichen, dazu Ihre 5 wichtigsten Abläufe
+              als Klicktest. Dazu Bericht, Architekturdiagramm und Fahrplan.
+            </p>
+          </div>
+        </div>
+
+        <div
+          data-reveal
+          style="--d: 360ms"
+          class="p-7 rounded-3xl bg-white shadow-customShadow dark:bg-charcoal flex flex-col gap-4"
+        >
+          <h3
+            class="font-outfit font-medium text-2xl text-charcoal dark:text-white"
+          >
+            Pflege
+          </h3>
+          <div
+            class="font-outfit font-semibold text-4xl tracking-tight text-charcoal dark:text-white"
+          >
+            ab 490 €
+            <span class="text-base font-normal text-pColor dark:text-white/60"
+              >im Monat</span
+            >
+          </div>
+          <p class="text-pColor dark:text-white/80">
+            Sicherheitsupdates, aktuelle Abhängigkeiten und das jährliche
+            Angular-Update. Zwölf Monate Laufzeit.
+          </p>
+        </div>
+      </div>
+
+      <p class="text-xs text-pColor/80 dark:text-white/50">
+        Alle Preise netto zzgl. gesetzlicher Umsatzsteuer. Das Angebot richtet
+        sich ausschließlich an Unternehmen. Es gelten die
+        <a
+          routerLink="/agb"
+          class="underline hover:text-charcoal dark:hover:text-white"
+          >AGB</a
+        >.
+      </p>
+    </section>
+
+    <!-- Person und Referenzen -->
+    <section
+      class="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-12 items-center"
+    >
+      <div data-reveal class="flex flex-col sm:flex-row gap-6 items-start">
+        <img
+          ngSrc="/images/avatar.jpg"
+          width="96"
+          height="96"
+          alt="Thomas Vollstädt"
+          class="rounded-full shrink-0 object-cover"
+        />
+        <div>
+          <blockquote
+            class="font-outfit text-2xl leading-snug text-charcoal dark:text-white"
+          >
+            „Ich mache die Arbeit selbst und bleibe Ihr Ansprechpartner. Lohnt
+            es sich bei Ihnen nicht, sage ich Ihnen das gleich im ersten
+            Gespräch.“
+          </blockquote>
+          <p class="mt-4 text-pColor dark:text-white/60">
+            Thomas Vollstädt · Softwarearchitekt aus Herten · Certified Senior
+            Angular Developer (certificates.dev)
+          </p>
+          <p class="mt-3 text-pColor dark:text-white/70">
+            Für einen Konzernkunden habe ich ein Kundenportal über elf
+            Hauptversionen hinweg aktuell gehalten, von Angular 8 bis 19.
+          </p>
+        </div>
+      </div>
+      <div data-reveal style="--d: 150ms">
+        <div
+          class="text-xs font-semibold uppercase tracking-widest text-pColor mb-4 dark:text-white/50"
+        >
+          Aus Projekten für
+        </div>
+        <div class="grid grid-cols-3 gap-3">
+          @for (client of clients; track client.alt) {
+            <div
+              class="h-16 px-4 rounded-2xl border border-dashed border-charcoal/20 bg-white/30 grid place-items-center dark:border-white/20 dark:bg-charcoal/30"
+            >
+              <img
+                [src]="client.image"
+                [alt]="client.alt"
+                loading="lazy"
+                class="max-h-7 object-contain opacity-60 dark:invert dark:brightness-150 dark:contrast-125"
+                [ngClass]="client.class"
+              />
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section
+      id="kontakt"
+      data-reveal
+      class="scroll-mt-24 text-center space-y-6"
+    >
+      <h2
+        class="font-outfit font-medium text-4xl md:text-5xl tracking-tight text-charcoal leading-[1.15] dark:text-white"
+      >
+        20 Minuten, und Sie wissen, woran Sie sind.
+      </h2>
+      <p class="text-pColor text-xl dark:text-white/80">
+        Den Kurz-Check machen wir dabei gleich mit.
+      </p>
+      <div class="flex justify-center pt-2">
+        <a
+          class="inline-block px-7 py-5 rounded-full text-white cursor-pointer transition ease-linear duration-75 font-poppins text-xl font-medium bg-customPurple/90 hover:bg-customPurple/70"
+          [href]="bookingLink"
+          target="_blank"
+          rel="noopener"
+          (click)="trackCtaClick()"
+        >
+          <i class="bi bi-calendar-check mr-2"></i> Termin vereinbaren<span
+            class="sr-only"
+          >
+            (öffnet in neuem Tab)</span
+          >
+        </a>
+      </div>
+      <p class="text-sm text-pColor dark:text-white/70">
+        Lieber per Mail? Schreiben Sie mir an
+        <a
+          class="underline hover:text-charcoal dark:hover:text-white"
+          [href]="mailtoLink"
+          >{{ mailAddress }}</a
+        >.
+      </p>
+    </section>
+  </div>
+
+  <app-footer />
+</div>

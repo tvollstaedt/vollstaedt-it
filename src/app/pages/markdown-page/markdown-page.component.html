@@ -1,0 +1,14 @@
+<div
+  class="container md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1320px] mx-auto px-7"
+>
+  <app-header />
+
+  @if (filePath()) {
+    <markdown
+      [src]="filePath()"
+      class="block break-words hyphens-auto prose dark:prose-invert my-10"
+    ></markdown>
+  }
+
+  <app-footer />
+</div>

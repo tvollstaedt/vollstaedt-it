@@ -1,0 +1,31 @@
+<!-- Footer -->
+<footer
+  id="footer"
+  class="bg-charcoal p-8 md:p-10 xl:p-12 rounded-t-3xl text-white/80 space-y-2 md:space-y-0"
+>
+  <div class="md:flex md:justify-between">
+    <div class="text-center md:text-left">
+      <p>
+        &copy; {{ currentYear() }} Vollstädt IT Solutions - Made with ❤️ in NRW
+      </p>
+    </div>
+    <div class="text-center md:text-right my-4 md:my-0">
+      <a
+        class="w-full relative text-white lg:before:content-[''] lg:before:absolute lg:before:-bottom-[1px] lg:before:left-0 lg:before:right-0 lg:before:h-px lg:before:bg-white lg:hover:before:w-full lg:before:animate-lineOut lg:hover:before:animate-lineIn hover:cursor-pointer hover:underline"
+        (click)="scrollToTop()"
+        >Scroll to Top</a
+      >
+    </div>
+  </div>
+  <div
+    class="text-white/40 flex flex-wrap gap-x-4 gap-y-2 justify-between md:justify-start md:pt-4"
+  >
+    <a routerLink="/angular">Angular-Migration</a>
+    <a routerLink="/shopware-migration">Shopware-Migration</a>
+    <a routerLink="/impressum">Impressum</a>
+    <a routerLink="/datenschutz">Datenschutz</a>
+    <a routerLink="/agb">AGB</a>
+    <a routerLink="/support">Support</a>
+    <a href="" (click)="openConsent($event)">Cookie Consent</a>
+  </div>
+</footer>

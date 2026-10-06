@@ -1,0 +1,56 @@
+slug: enterprise-ui-library
+title: "Komponentenbibliothek & Designsystem"
+subtitle: "Entwickelt für ein Energieversorgungsunternehmen im Rahmen eines längerfristigen Mandats"
+type: client
+client: Ista SE
+categories: ["Design System", "Angular", "Tailwind", "UI/UX"]
+services: ["Architektur", "Komponentenentwicklung", "Tooling", "Design Collaboration"]
+technologies:
+  - name: Angular
+    url: https://angular.io
+  - name: Angular Material
+    url: https://material.angular.io
+  - name: TailwindCSS
+    url: https://tailwindcss.com
+  - name: Storybook
+    url: https://storybook.js.org
+  - name: Figma
+    url: https://figma.com
+  - name: Module Federation
+    url: https://webpack.js.org/concepts/module-federation/
+coverImage: "images/portfolio/other/7.webp"
+date: "2024-03-01"
+highlight: true
+
+description: |
+  ### Zielsetzung
+
+  Im Rahmen eines unternehmensweiten Angular-Rollouts entstand die Notwendigkeit, eine konsistente und wartbare UI-Basis zu schaffen – für sowohl interne Webanwendungen als auch öffentlich sichtbare Webseiten. Die initiale Grundlage bildete eine Angular-Komponentenbibliothek auf Basis von Angular Material.
+
+  Im weiteren Verlauf wurde der Bedarf an einem **technologieübergreifenden Designsystem** deutlich – das nicht nur Angular, sondern auch klassische Webseitenprojekte adressiert. Die Lösung war ein modular aufgebautes **Designsystem mit TailwindCSS als technischer Unterbau**.
+
+  ### Meine Rolle
+  Ich war verantwortlich für Vision, Konzeption und Umsetzung der UI-Bibliothek. In enger Zusammenarbeit mit Design- und UX-Kollegen habe ich ein konsistentes Komponenten- und Dokumentationskonzept etabliert, das die Entwicklungsarbeit im gesamten Unternehmen nachhaltig verbessert hat.
+
+  ### Umsetzung
+
+  Kernstück des Systems ist eine zentrale **Tailwind-Konfiguration**, die als Shared-Library alle Design-Tokens wie Farben, Abstände, Schriften und responsive Werte bereitstellt.
+
+  Darauf aufbauend entstanden zwei eigenständige Bibliotheken:
+
+  - `ui-angular`: Eine Angular-Komponentenbibliothek, die Design- und Interaktionsmuster für Webanwendungen umsetzt. Aufgrund der Limitierungen von Storybook wurde eine eigene Angular-Demo-App für die Dokumentation und das Testing erstellt.
+  - `ui-blocks`: Eine HTML/CSS-Snippet-Sammlung für klassische Webseiten, gepflegt mit Tailwind & Storybook. Sie bildet u.a. das visuelle Pendant zur zweiten Figma-Bibliothek.
+
+  Ergänzt wurden beide Bibliotheken durch passende **Figma-Designkits** (jeweils für Website und Angular), sodass Design und Code konsistent entwickelt und genutzt werden konnten.
+
+  ### Nutzen & Wirkung
+
+  - Designer:innen und Entwickler:innen arbeiteten auf gemeinsamer Grundlage und sparten dadurch erheblich Zeit
+  - Teams konnten direkt auf dokumentierte Komponenten und Patterns zurückgreifen
+  - Neue Projekte profitierten direkt von getesteten, zugänglichen und markenkonformen Elementen
+
+  ### Learnings
+
+  Die Entwicklung technischer UI-Bibliotheken ist nur ein Teil der Arbeit – mindestens genauso anspruchsvoll ist die **Etablierung im Unternehmen**: Wartung, Kommunikation, Schulung, kulturelle Integration und Management-Support sind entscheidend für den Erfolg.
+
+  Trotz anfänglicher Herausforderungen wurde das Projekt langfristig etabliert und hat sich im Unternehmen als fester Bestandteil der Frontend-Entwicklung durchgesetzt.

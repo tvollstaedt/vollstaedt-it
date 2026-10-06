@@ -1,0 +1,22 @@
+@use "glightbox/dist/css/glightbox.css";
+@use "bootstrap-icons";
+@use "styles/cookiebanner";
+@use "styles/fonts";
+@use "styles/icons";
+@use "styles/mixitup";
+@use "styles/skeleton-loader";
+@use "styles/stroke-text";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  body {
+    color-scheme: light;
+
+    &.dark {
+      color-scheme: dark;
+    }
+  }
+}

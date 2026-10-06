@@ -1,0 +1,39 @@
+/* Skeleton Loader */
+ngx-skeleton-loader .skeleton-loader {
+  background-color: #d1d5db; /* etwas dunkleres Grau (Tailwind gray-300) */
+  background-image: linear-gradient(
+    90deg,
+    #d1d5db,
+    #e5e7eb,
+    #d1d5db
+  ); /* sanfter Schimmer */
+
+  &.progress:before {
+    background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0)
+    );
+  }
+}
+
+/* Dark Mode Overrides */
+.dark ngx-skeleton-loader .skeleton-loader {
+  background-color: #374151;
+  background-image: linear-gradient(
+    90deg,
+    rgba(55, 65, 81, 0.93),
+    rgba(75, 85, 99, 0.58),
+    rgba(55, 65, 81, 0.93)
+  );
+
+  &.progress:before {
+    background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0)
+    );
+  }
+}
